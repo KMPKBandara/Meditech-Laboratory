@@ -1,52 +1,63 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../assets/images/logo.jpeg";
+import { usePathname } from "next/navigation";
+import logo from "../public/images/logo.jpeg";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Tests", href: "/tests" },
+  { label: "Laboratory Network", href: "/network" },
+  { label: "About Us", href: "/about" },
+];
 
 const Header = () => {
-  return (
-    <header className="sticky top-0 z-50 bg-white shadow-md py-4">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/">
-            <Image
-              src={logo}
-              alt="Meditech Logo"
-              width={80}
-              height={32}
-              className="cursor-pointer"
-            />
-          </Link>
+  const pathname = usePathname();
 
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
+  return (
+    <header
+      className="sticky top-0 z-50 shadow-sm py-2 bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/images/header-bg.png')",
+      }}
+    >
+      <div className="bg-white/80">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
             <Link href="/">
-              <span className="hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                Home
-              </span>
+              <Image
+                src={logo}
+                alt="Meditech Logo"
+                width={60}
+                height={28}
+                className="cursor-pointer object-contain"
+              />
             </Link>
-            <Link href="/services">
-              <span className="hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                Services
-              </span>
-            </Link>
-            <Link href="/tests">
-              <span className="hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                Tests
-              </span>
-            </Link>
-            <Link href="/network">
-              <span className="hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                Laboratory Network
-              </span>
-            </Link>
-            <Link href="/about">
-              <span className="hover:text-blue-600 transition-colors duration-200 cursor-pointer">
-                About Us
-              </span>
-            </Link>
-          </nav>
+
+            {/* Navigation */}
+            <nav className="hidden md:flex space-x-6 text-base font-semibold">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link key={link.href} href={link.href}>
+                    <span
+                      className={`cursor-pointer px-3 py-1 rounded-md transition duration-200 ${
+                        isActive
+                          ? "bg-blue-600 text-white shadow"
+                          : "text-gray-800 hover:text-blue-600 hover:bg-white/60"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
         </div>
       </div>
     </header>
