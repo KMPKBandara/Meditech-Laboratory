@@ -13,8 +13,8 @@ const Header = () => {
             <Image
               src={logo}
               alt="Meditech Logo"
-              width={100}
-              height={40}
+              width={80}
+              height={32}
               className="cursor-pointer"
             />
           </Link>
