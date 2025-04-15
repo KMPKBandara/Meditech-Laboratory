@@ -75,7 +75,7 @@ const Footer = () => {
             <li>🏥 Main Branch - Balangoda</li>
             <li>🏥 Rathnapura</li>
             <li>🏥 Welimada</li>
-            <li>🏥 Badulla</li>
+            <li>🏥 Kalawana</li>
           </ul>
         </div>
 
