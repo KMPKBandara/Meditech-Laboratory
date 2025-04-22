@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { HiMenu, HiX } from "react-icons/hi";
 import logo from "../public/images/logo.jpeg";
 
 const navLinks = [
@@ -16,6 +17,10 @@ const navLinks = [
 
 const Header = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header
@@ -38,12 +43,12 @@ const Header = () => {
               />
             </Link>
 
-            {/* Navigation */}
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6 text-base font-semibold">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <Link key={link.href} href={link.href}>
+                  <Link key={link.href} href={link.href} onClick={closeMenu}>
                     <span
                       className={`cursor-pointer px-3 py-1 rounded-md transition duration-200 ${
                         isActive
@@ -57,8 +62,41 @@ const Header = () => {
                 );
               })}
             </nav>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              className="md:hidden text-2xl text-blue-700"
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <HiX /> : <HiMenu />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Sidebar Menu */}
+        {isOpen && (
+          <div className="md:hidden bg-white shadow-lg z-50 fixed inset-0 top-16 left-0 w-full h-full">
+            <nav className="flex flex-col p-4 space-y-3">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link key={link.href} href={link.href} onClick={closeMenu}>
+                    <span
+                      className={`block px-3 py-2 rounded-md font-semibold ${
+                        isActive
+                          ? "bg-blue-600 text-white"
+                          : "text-gray-800 hover:text-blue-600 hover:bg-gray-100"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
