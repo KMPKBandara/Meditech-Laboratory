@@ -106,19 +106,22 @@ const LaboratoryNetwork = () => {
           </div>
         ))}
       </div>
+
+      {/* Map Section */}
       <div className="mt-12">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
           Find Us on the Map
         </h2>
-        <div className="w-full h-96">
+        <div className="flex justify-center">
           <iframe
-            title="MediTech Laboratory Locations"
-            src="https://www.google.com/maps/d/embed?mid=1a2b3c4d5e6f7g8h9i0j"
-            width="100%"
-            height="100%"
-            allowFullScreen=""
-            loading="lazy"
-            className="border-0"
+            width="520"
+            height="400"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight="0"
+            marginWidth="0"
+            src="https://maps.google.com/maps?width=520&height=400&hl=en&q=Meditech%20Laboratory%20Balangoda&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+            title="Meditech Laboratory Map"
           ></iframe>
         </div>
       </div>
