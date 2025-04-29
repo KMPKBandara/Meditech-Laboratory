@@ -106,14 +106,24 @@ const LaboratoryNetwork = () => {
           </div>
         ))}
       </div>
+
+      {/* Map Section */}
       <div className="mt-12">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
           Find Us on the Map
         </h2>
-       <iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Balangoda%20Private%20Hospital%20Meditech%20Laboratory%20No.10%20karawketiya%20rd%20Balangoda%200714453493+(MediTech%20Laboratory%20Locations)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/collections/personal-trackers/">gps trackers</a></iframe>
-      </div>
-      <div>
-        
+        <div className="flex justify-center">
+          <iframe
+            width="520"
+            height="400"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight="0"
+            marginWidth="0"
+            src="https://maps.google.com/maps?width=520&height=400&hl=en&q=Meditech%20Laboratory%20Balangoda&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+            title="Meditech Laboratory Map"
+          ></iframe>
+        </div>
       </div>
     </div>
   );
