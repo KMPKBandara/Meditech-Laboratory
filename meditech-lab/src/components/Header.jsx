@@ -13,6 +13,8 @@ const navLinks = [
   { label: "Tests", href: "/tests" },
   { label: "Laboratory Network", href: "/network" },
   { label: "About Us", href: "/about" },
+  { label: "Download Report", href: "/download-report" },
+
 ];
 
 const Header = () => {
