@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
-import logo from "../public/images/logo.jpeg";
+import logo from "../../public/header/logo.jpeg";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -14,7 +14,6 @@ const navLinks = [
   { label: "Laboratory Network", href: "/network" },
   { label: "About Us", href: "/about" },
   { label: "Download Report", href: "/download-report" },
-
 ];
 
 const Header = () => {
