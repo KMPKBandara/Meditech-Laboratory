@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
-import logo from "../public/images/logo.jpeg";
+import logo from "../../public/header/logo.jpeg";
+import bgImg from "../../public/header/header-bg.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -14,7 +15,6 @@ const navLinks = [
   { label: "Laboratory Network", href: "/network" },
   { label: "About Us", href: "/about" },
   { label: "Download Report", href: "/download-report" },
-
 ];
 
 const Header = () => {
@@ -27,9 +27,9 @@ const Header = () => {
   return (
     <header
       className="sticky top-0 z-50 shadow-sm py-2 bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/images/header-bg.png')",
-      }}
+      /*style={{
+        backgroundImage: { bgImg },
+      }}*/
     >
       <div className="bg-white/80">
         <div className="container mx-auto px-4">
