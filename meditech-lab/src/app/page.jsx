@@ -6,6 +6,7 @@ import LabNetwork from "@/components/home/LabNetwork";
 import Facilities from "@/components/home/Facilities";
 import Feedback from "@/components/home/Feedback";
 import Top from "@/components/home/Top";
+import ChatWidget from "@/components/chatbot/ChatWidget";
 
 const HomePage = () => {
   return (
@@ -22,6 +23,8 @@ const HomePage = () => {
       <Facilities />
       {/* Feedback Section */}
       <Feedback />
+      {/* Fixed ChatBot box bottom right */}
+      <ChatWidget />
     </div>
   );
 };
