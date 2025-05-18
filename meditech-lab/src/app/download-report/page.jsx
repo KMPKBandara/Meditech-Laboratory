@@ -24,7 +24,7 @@ export default function DownloadReport() {
      // Simulate delay for better UX (optional)
     setTimeout(() => {
       setLoading(false);
-      router.push(`/reports/${encodeURIComponent(referenceId.trim())}`);
+      router.push(`/report/${encodeURIComponent(referenceId.trim())}`);
     }, 800);
   };
 
