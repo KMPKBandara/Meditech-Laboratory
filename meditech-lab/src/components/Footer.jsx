@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../public/images/Logo.png";
+import logo from "../../public/header/Logo.png";
 import {
   FaFacebookF,
   FaTwitter,
