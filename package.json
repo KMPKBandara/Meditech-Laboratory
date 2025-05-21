@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-pdf": "^9.2.1"
+  }
+}
