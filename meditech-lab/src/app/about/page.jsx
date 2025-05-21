@@ -7,6 +7,7 @@ import DirectorCarousel from "@/components/AboutUs/DirectorCarousel";
 import BranchCarousel from "@/components/AboutUs/BranchCarousel";
 import SocialMedia from "@/components/AboutUs/SocialMedia";
 
+
 const AboutUs = () => {
   return (
     <div className="bg-white text-center">
