@@ -56,17 +56,16 @@ export default function ReportPage({ params }) {
     }, 800); // Simulate network delay
   }, [id]);
 
-   const onDocumentLoadSuccess = ({ numPages }) => {
-     setNumPages(numPages);
-    }
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
 
-    const handleDownload = () => {
+  const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/report.pdf"; // ✅ correct relative URL
     link.download = `report.pdf`; // Optional: dynamic filename
     link.click();
-    };
-
+  };
 
   if (loading) {
     return <div className="text-center py-10">Loading report...</div>;
@@ -84,8 +83,12 @@ export default function ReportPage({ params }) {
       <h1 className="text-2xl font-bold mb-4">Test Report - Ref: {id}</h1>
 
       <div className="mb-6">
-        <p><strong>Patient:</strong> {reportData.patientName}</p>
-        <p><strong>Date:</strong> {reportData.testDate}</p>
+        <p>
+          <strong>Patient:</strong> {reportData.patientName}
+        </p>
+        <p>
+          <strong>Date:</strong> {reportData.testDate}
+        </p>
       </div>
 
       <table className="min-w-full table-auto border-collapse">
@@ -101,7 +104,9 @@ export default function ReportPage({ params }) {
             <tr key={index}>
               <td className="border px-4 py-2">{result.name}</td>
               <td className="border px-4 py-2 font-medium">{result.value}</td>
-              <td className="border px-4 py-2 text-gray-600">{result.normal}</td>
+              <td className="border px-4 py-2 text-gray-600">
+                {result.normal}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -117,9 +122,9 @@ export default function ReportPage({ params }) {
             loading="Loading PDF..."
             error="Failed to load PDF."
           >
-           {Array.from(new Array(numPages), (_, index) => (
-           <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-          ))}
+            {Array.from(new Array(numPages), (_, index) => (
+              <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+            ))}
           </Document>
         </div>
       </div>
