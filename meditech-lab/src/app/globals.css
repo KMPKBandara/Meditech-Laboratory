@@ -2,3 +2,18 @@
 @import 'swiper/css';
 @import 'swiper/css/pagination';
 
+/* Custom Styles */
+.pdf-container {
+  width: 100%;
+}
+
+.pdf-container canvas {
+  max-width: 100%;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
