@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import LabTec from "../../assets/images/home/Lab-Technician.png";
+import LabTec from "../../assets/images/home/Lab.jpg";
 
 const ChooseUs = () => {
   // Refs for animation elements
