@@ -110,7 +110,7 @@ const Tests = () => {
             {/* Desktop Layout */}
             <div className="hidden md:flex items-center justify-between gap-6">
               {/* Title */}
-              <h1 className="text-2xl font-bold text-gray-900 flex-shrink-0">
+              <h1 className="text-3xl md:text-4xl font-bold text-blue-800 fade-up flex-shrink-0">
                 Diagnostic Test Explorer
               </h1>
 
