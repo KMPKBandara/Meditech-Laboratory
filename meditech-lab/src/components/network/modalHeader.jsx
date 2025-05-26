@@ -2,10 +2,10 @@ import { Clock, Star} from "lucide-react";
 
 
 const ModalHeader = ({ branch, onClose }) => (
-  <div className={`sticky top-0 bg-gradient-to-r ${branch.color} text-white px-8 py-6 flex justify-between items-center rounded-t-3xl`}>
+  <div className={`sticky top-0 bg-gradient-to-r ${branch.bgcolor} bg-blue-800 px-8 py-6 flex justify-between items-center rounded-t-3xl`}>
     <div>
-      <h2 className="text-3xl font-bold">
-        {branch.name.replace(' (Main Branch)', '')} Branch
+      <h2 className="text-3xl font-bold text-white ">
+        {branch.name.replace(' (Main Branch)')}
       </h2>
       <div className="flex items-center gap-4 mt-2">
         <div className="flex items-center gap-1">

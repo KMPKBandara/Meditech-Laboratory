@@ -59,13 +59,13 @@ const BranchCard = ({ branch, index, onOpenPopup, onHover, onHoverEnd }) => (
       </div>
 
       {/* Specialties */}
-      <div className="mb-6">
-        <h3 className="text-sm font-semibold text-blue-800 mb-3 uppercase tracking-wider">
+      <div className="mb-6 ">
+        <h3 className="text-sm  font-semibold text-blue-800 mb-3 uppercase tracking-wider">
           Specialties
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 ">
           {branch.specialties.map((specialty, idx) => (
-            <span key={idx} className={`px-3 py-1 bg-gradient-to-r ${branch.color} text-white text-xs font-medium rounded-full shadow-sm`}>
+            <span key={idx} className={`px-3 py-1 bg-blue-800 ${branch.color} text-white text-xs font-medium rounded-full shadow-sm`}>
               {specialty}
             </span>
           ))}
@@ -87,7 +87,7 @@ const BranchCard = ({ branch, index, onOpenPopup, onHover, onHoverEnd }) => (
       {/* Action Button */}
       <button 
         onClick={() => onOpenPopup(branch)}
-        className={`w-full bg-gradient-to-r ${branch.color} text-white px-6 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group/btn`}
+        className={`w-full bg-blue-800 ${branch.color} text-white px-6 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group/btn`}
       >
         <Navigation className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
         View Details 

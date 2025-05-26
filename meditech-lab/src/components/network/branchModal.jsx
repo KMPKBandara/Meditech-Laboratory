@@ -13,7 +13,7 @@ const BranchModal = ({ selectedBranch, onClose }) => {
         <div className="p-8">
           <div className="text-center mb-10">
             <p className="text-xl text-blue-800 max-w-3xl mx-auto leading-relaxed">
-              Welcome to our {selectedBranch.name.replace(' (Main Branch)', '')} branch. 
+              Welcome to our {selectedBranch.name.replace(' (Main Branch)', '')}. 
               We are committed to delivering exceptional diagnostic services with 
               state-of-the-art equipment and experienced medical professionals.
             </p>

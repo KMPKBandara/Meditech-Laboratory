@@ -7,7 +7,7 @@ const SpecialtiesBanner = ({ branch }) => (
       {branch.specialties.map((specialty, idx) => (
         <span 
           key={idx} 
-          className={`px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-gradient-to-r ${branch.color} text-white text-xs sm:text-sm md:text-base font-semibold rounded-full shadow-lg transition-transform hover:scale-105 duration-200`}
+          className={`px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-blue-700 ${branch.color} text-white text-xs sm:text-sm md:text-base font-semibold rounded-full shadow-lg transition-transform hover:scale-105 duration-200`}
         >
           {specialty}
         </span>
