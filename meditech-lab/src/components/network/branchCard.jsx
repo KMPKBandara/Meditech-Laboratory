@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Navigation, Clock, Star, ChevronRight } from "lucide-react";
+import { MapPin, Phone, Mail, Navigation, Clock, ChevronRight } from "lucide-react";
 import CollectionCenter from "@/components/network/collectionCenter";
 
 
@@ -28,11 +28,6 @@ const BranchCard = ({ branch, index, onOpenPopup, onHover, onHoverEnd }) => (
             </h2>
           </button>
           <div className="flex items-center gap-2 mb-4">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className={`w-4 h-4 ${i < Math.floor(branch.rating) ? 'text-yellow-400 fill-current' : 'text-blue-300'}`} />
-              ))}
-            </div>
             <span className="text-sm text-blue-600 font-medium">{branch.rating}</span>
           </div>
         </div>

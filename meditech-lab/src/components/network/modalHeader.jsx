@@ -1,4 +1,4 @@
-import { Clock, Star} from "lucide-react";
+import { Clock,} from "lucide-react";
 
 
 const ModalHeader = ({ branch, onClose }) => (
@@ -8,12 +8,6 @@ const ModalHeader = ({ branch, onClose }) => (
         {branch.name.replace(' (Main Branch)')}
       </h2>
       <div className="flex items-center gap-4 mt-2">
-        <div className="flex items-center gap-1">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className={`w-4 h-4 ${i < Math.floor(branch.rating) ? 'text-yellow-300 fill-current' : 'text-white/50'}`} />
-          ))}
-          <span className="ml-2 text-white/90">{branch.rating}</span>
-        </div>
         <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
           <Clock className="w-4 h-4" />
           <span className="text-sm">{branch.hours}</span>

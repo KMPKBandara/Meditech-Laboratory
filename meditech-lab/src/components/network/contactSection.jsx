@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Navigation, Clock, Star, ChevronRight } from "lucide-react";
+import {Phone, Mail } from "lucide-react";
 
 const ContactSection = ({ branch }) => (
   <div className={`${branch.bgColor} rounded-2xl p-8 text-center border border-white/50`}>

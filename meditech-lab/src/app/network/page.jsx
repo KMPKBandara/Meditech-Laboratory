@@ -21,8 +21,7 @@ const branches = [
     address: "No. 123 Main Street, Balangoda, Sri Lanka",
     phone: "+94 45 222 3344",
     email: "balangoda@meditech.lk",
-    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound"],
-    rating: 4.8,
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
     hours: "24/7",
     collectionCenters: [],
     detailedCenters: [
@@ -54,8 +53,7 @@ const branches = [
     address: "No 344,Hospital Junction,Colombo Road,Rathnapura.",
     phone: "045 222 6446  / 071 155 6446",
     email: "meditechrathnapura@gmail.com",
-    specialties: ["CT Scan", "MRI", "Blood Tests", "Pathology"],
-    rating: 4.7,
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
     hours: "7 AM - 7 PM  (poyaday Closed)",
     collectionCenters: [],
     detailedCenters: [
@@ -183,8 +181,7 @@ const branches = [
     address: "No. 789 Hill Street, Welimada, Sri Lanka",
     phone: "+94 52 224 5566",
     email: "welimada@meditech.lk",
-    specialties: ["Cardiology", "Neurology", "Blood Tests", "Imaging"],
-    rating: 4.6,
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
     hours: "7 AM - 9 PM",
     collectionCenters: [],
     detailedCenters: [
@@ -214,10 +211,9 @@ const branches = [
   {
     name: "Kalawana Main Branch",
     address: "HOSPITAL ROAD, KALAWANA",
-    phone: ["0452255370","0717647460"],
+    phone: ["0452255370 / 0717647460"],
     email: "kalawanalab@gmail.com",
-    specialties: ["General Testing", "Vaccination", "Health Checkups"],
-    rating: 4.5,
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
     hours: "6 AM - 7 PM",
     collectionCenters: [],
     detailedCenters: [

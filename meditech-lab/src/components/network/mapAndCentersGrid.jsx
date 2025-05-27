@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Building2, Navigation, Clock, Star, ChevronRight } from "lucide-react";
+import { MapPin, Building2,} from "lucide-react";
 import DetailedCenter from "@/components/network/detailedCenter";
 
 const MapAndCentersGrid = ({ branch }) => (
