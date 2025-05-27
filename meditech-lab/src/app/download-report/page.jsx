@@ -1,5 +1,3 @@
-// app/download-report/page.jsx
-
 "use client";
 
 import { useState } from "react";
@@ -36,14 +34,15 @@ export default function DownloadReport() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-16 p-6 bg-white shadow-lg rounded-lg">
-      {/* Icon */}
-      <div className="flex justify-center mb-4">
-        <span className="text-5xl">📄</span>
+    <div className="max-w-xl mx-auto mt-16 p-6 bg-white shadow-xl rounded-2xl transition-all duration-300">
+      
+      {/* Blue Header Label Box */}
+      <div className="bg-blue-600 text-white px-4 py-3 rounded-lg shadow flex items-center space-x-3 mb-6">
+        <span className="text-2xl">📄</span>
+        <h1 className="text-lg font-semibold">Download Your Report</h1>
       </div>
 
-      <h1 className="text-2xl font-bold text-center mb-6">Download Your Report</h1>
-      <p className="text-gray-600 text-center mb-4">
+      <p className="text-gray-600 mb-6 leading-relaxed">
         Enter your reference number and select your lab branch to view and download your lab report securely.
       </p>
 
@@ -51,7 +50,7 @@ export default function DownloadReport() {
         {/* Reference Number Input */}
         <div className="mb-4">
           <label htmlFor="referenceId" className="block text-gray-700 font-medium mb-2">
-            Enter Reference Number
+            Reference Number
           </label>
           <input
             type="text"
@@ -62,19 +61,15 @@ export default function DownloadReport() {
               setError("");
             }}
             placeholder="E.g., LAB-12345"
-            aria-label="Reference Number"
-            aria-describedby="reference-help reference-error"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
-          <p id="reference-help" className="text-gray-500 text-sm mt-1">
-            Format: LAB-XXXXXX (e.g., LAB-12345)
-          </p>
+          <p className="text-gray-500 text-sm mt-1">Format: LAB-XXXXXX</p>
         </div>
 
         {/* Branch Dropdown */}
         <div className="mb-4">
           <label htmlFor="branch" className="block text-gray-700 font-medium mb-2">
-            Select Lab Branch
+            Lab Branch
           </label>
           <select
             id="branch"
@@ -83,9 +78,9 @@ export default function DownloadReport() {
               setBranch(e.target.value);
               setError("");
             }}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 rounded-md shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           >
-            <option value="">Select a Branch </option>
+            <option value="">Select a Branch</option>
             <option value="Balangoda">Balangoda</option>
             <option value="Rathnapura">Rathnapura</option>
             <option value="Welimada">Welimada</option>
@@ -95,7 +90,7 @@ export default function DownloadReport() {
 
         {/* Error Message */}
         {error && (
-          <p id="reference-error" className="text-red-500 text-sm mt-1" role="alert">
+          <p className="text-red-600 text-sm mt-1 font-medium" role="alert">
             {error}
           </p>
         )}
@@ -104,8 +99,10 @@ export default function DownloadReport() {
         <button
           type="submit"
           disabled={loading}
-          className={`w-full text-white py-2 px-4 rounded-md transition ${
-            loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
+          className={`w-full text-white py-2 px-4 rounded-lg font-semibold shadow-md transition duration-300 ${
+            loading
+              ? "bg-blue-400 cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700"
           }`}
         >
           {loading ? (
@@ -133,8 +130,8 @@ export default function DownloadReport() {
         </button>
       </form>
 
-      <p className="text-gray-500 text-sm text-center mt-6">
-        For assistance, contact our support team at{" "}
+      <p className="text-gray-600 text-sm text-center mt-6">
+        Need help?{" "}
         <a href="mailto:info@meditechlab.lk" className="text-blue-600 hover:underline">
           info@meditechlab.lk
         </a>
