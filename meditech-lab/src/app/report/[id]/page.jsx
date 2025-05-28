@@ -5,6 +5,7 @@ import { useRouter, useSearchParams, useParams } from "next/navigation";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
+import { useRef } from "react"; 
 
 // Set PDF.js worker 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
@@ -34,6 +35,13 @@ export default function ReportPage() {
     setLoading(false);
   };
 
+  // Add print functionality 
+const printRef = useRef(null);
+
+const handlePrint = () => {
+  window.print();
+};
+
   return (
     <div className="flex flex-col items-center p-6 min-h-screen bg-gray-100">
       {/* Blue Label Header */}
@@ -55,7 +63,7 @@ export default function ReportPage() {
         {pdfUrl ? (
           <>
             {/* Scrollable PDF Viewer */}
-            <div className="border-1 border-blue-100 rounded-md p-2 bg-gray-50 shadow-inner">
+            <div ref={printRef} className="print:block border-2 border-blue-100 rounded-md p-4 bg-gray-50 shadow-inner flex justify-center">
               <Document
                 file={pdfUrl}
                 onLoadSuccess={onDocumentLoadSuccess}
@@ -68,14 +76,14 @@ export default function ReportPage() {
               >
                 <div className="flex flex-col items-center space-y-6">
                  {Array.from(new Array(numPages), (el, index) => (
-                   <Page key={`page_${index + 1}`} pageNumber={index + 1} scale={1.0} className="shadow-lg border border-gray-200 rounded" />
+                   <Page key={`page_${index + 1}`} pageNumber={1} scale={1.0} className="mb-4" />
                   ))}
                 </div>  
               </Document>
             </div>
 
             {/* Download Button */}
-            <div className="mt-6 text-right">
+            <div className="mt-6 flex justify-end gap-4">
               <a
                 href={pdfUrl}
                 download={`${referenceId}-${branch}.pdf`}
@@ -83,6 +91,12 @@ export default function ReportPage() {
               >
                  Download Report
               </a>
+              <button 
+                onClick={handlePrint}
+                className="inline-block bg-blue-600 text-white px-6 py-1 rounded-lg font-semibold shadow hover:bg-blue-700 transition"
+              >
+                Print Report
+              </button>  
             </div>
           </>
         ) : (
