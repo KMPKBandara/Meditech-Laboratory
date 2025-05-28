@@ -17,3 +17,29 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  .print\:block,
+  .print\:block * {
+    visibility: visible !important;
+  }
+
+  .print\:block {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+}
+
