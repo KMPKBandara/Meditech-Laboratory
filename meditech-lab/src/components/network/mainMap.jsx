@@ -10,18 +10,7 @@ const MainMapSection = () => (
       </p>
     </div>
     <div className="flex justify-center">
-      <div className="rounded-xl overflow-hidden shadow-5xl ring-1 ring-black/5" style={{ width: '100%', maxWidth: '500px', height: '400px' }}>
-        <iframe
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          src="https://maps.google.com/maps?width=800&height=450&hl=en&q=Meditech%20Laboratory%20Balangoda&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-          title="Meditech Laboratory Map"
-          className="w-full h-full"
-        ></iframe>
-      </div>
+    <h1>map</h1>
     </div>
   </div>
 );
