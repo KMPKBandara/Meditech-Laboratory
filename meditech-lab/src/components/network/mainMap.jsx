@@ -10,7 +10,7 @@ const MainMapSection = () => (
       </p>
     </div>
     <div className="flex justify-center">
-    <h1>map</h1>
+    <iframe width="720" height="600" src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=No:344,Hospital%20Junction,Colombo%20Road,Meditech%20Laboratory%20Rathnapura.+(Rathnapura%20Main%20Branch)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
     </div>
   </div>
 );

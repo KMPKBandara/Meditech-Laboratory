@@ -18,7 +18,7 @@ import BranchModal from "@/components/network/branchModal";
 const branches = [
   {
     name: "Balangoda Main Branch",
-    address: "No:08 Kalthota Road Balagahamula Balangoda ",
+    address: "No:08 Kalthota Road Balagahamula Meditech Laboratory Balangoda ",
     phone: "0452288388 / 0717184606 / 0715179093 / Whatsapp - 0715179093",
     email: "-----------",
     specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
@@ -111,7 +111,7 @@ const branches = [
   },
   {
     name: "Rathnapura Main Branch",
-    address: "No:344,Hospital Junction,Colombo Road,Rathnapura.",
+    address: "No:344,Hospital Junction,Colombo Road,Meditech Laboratory Rathnapura.",
     phone: "045 222 6446  / 071 155 6446",
     email: "meditechrathnapura@gmail.com",
     specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
