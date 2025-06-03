@@ -1,7 +1,9 @@
 // src/app/api/admin/branches/[id]/route.js
 import dbConnect from "@/app/admin/lib/mongodb";
 import { NextResponse } from "next/server";
-import Branch from "@/models/Branch"; // <--- Import your Branch model here
+import { getServerSession } from "next-auth"; // NEW: Import getServerSession
+import { authOptions } from "../../../auth/[...nextauth]/route"; // NEW: Import your auth options (adjusted path)
+import Branch from "@/models/Branch";
 
 // The getBranchModel function is now much simpler!
 function getBranchModel() {
@@ -9,6 +11,14 @@ function getBranchModel() {
 }
 
 export async function PUT(req, { params }) {
+  // NEW: Authentication and Authorization Check
+  const session = await getServerSession(authOptions);
+
+  if (!session || session.user.role !== "admin") {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+  // END NEW: Authentication and Authorization Check
+
   await dbConnect();
   const BranchModel = getBranchModel(); // Use BranchModel
 
@@ -51,6 +61,14 @@ export async function PUT(req, { params }) {
 }
 
 export async function DELETE(req, { params }) {
+  // NEW: Authentication and Authorization Check
+  const session = await getServerSession(authOptions);
+
+  if (!session || session.user.role !== "admin") {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+  // END NEW: Authentication and Authorization Check
+
   try {
     await dbConnect();
     const BranchModel = getBranchModel(); // Use BranchModel
