@@ -1,89 +1,236 @@
 "use client"
 
 import React, { useState } from "react";
-import { MapPin, Phone, Mail, Building2, Navigation, Clock, Star, ChevronRight } from "lucide-react";
 import BackgroundElements from "@/components/network/background";
+import HeroSection from "@/components/network/heroSection"
+import CollectionCenter from "@/components/network/collectionCenter";
+import BranchCard from "@/components/network/branchCard";
+import MainMapSection from "@/components/network/mainMap";
+import ModalHeader from "@/components/network/modalHeader";
+import SpecialtiesBanner from "@/components/network/specialtiesBanner";
+import DetailedCenter from "@/components/network/detailedCenter";
+import MapAndCentersGrid from "@/components/network/mapAndCentersGrid";
+import ContactSection from "@/components/network/contactSection";
+import BranchModal from "@/components/network/branchModal";
+
 
 // Data
 const branches = [
   {
-    name: "Balangoda (Main Branch)",
-    address: "No. 123 Main Street, Balangoda, Sri Lanka",
-    phone: "+94 45 222 3344",
-    email: "balangoda@meditech.lk",
-    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound"],
-    rating: 4.8,
+    name: "Balangoda Main Branch",
+    address: "No:08 Kalthota Road Balagahamula Meditech Laboratory Balangoda ",
+    phone: "0452288388 / 0717184606 / 0715179093 / Whatsapp - 0715179093",
+    email: "-----------",
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
     hours: "24/7",
-    collectionCenters: [
-      {
-        name: "Imbulpe Collection Center",
-        address: "No. 10, Imbulpe Road, Balangoda",
-      },
-      {
-        name: "Pambahinna Collection Center",
-        address: "No. 22, Pambahinna Junction, Balangoda",
-      },
-    ],
+    collectionCenters: [],
     detailedCenters: [
-      {
-        id: 1,
-        address: "No. 123 Main Street, Balangoda, Sri Lanka",
-        phone: "+94 45 222 3344",
-        email: "balangoda@meditech.lk",
+     {     
+        id:1,
+        name: "Waleboda Collection Center",
+        address: "Manathunkanda, Egoda, waleboda",
+        phone: "0772712861 / 0717416648",
+        hours: "7 AM - 5 PM (Poya Day Closed)",
+      
       },
-      {
-        id: 2,
-        address: "No. 456 Lake Road, Balangoda, Sri Lanka",
-        phone: "+94 45 222 5566",
-        email: "center2@meditech.lk",
+      {     
+        id:2,
+        name: " Rassagala Collection Center",
+        address: " Rassagala,Balangoda(Rassagala Town)",
+        phone: "0716519386",
+        hours: "7 AM - 10 PM / 4 PM - 7.30 PM(Poya day and sunday closed)",
+      
       },
-      {
-        id: 3,
-        address: "No. 789 Hill Avenue, Balangoda, Sri Lanka",
-        phone: "+94 45 222 7788",
-        email: "center3@meditech.lk",
+      {     
+        id:3,
+        name: " Balangoda Privet Hospital ",
+        address: " No:10, Karawketiya Road, Balangoda",
+        phone: "071-4453493",
+        hours: "7 AM - 7 PM / 6.30 PM - 4 P - (Poya day)",    
       },
+       {     
+        id:4,
+        name: "Pinnawala Privet Hospital ",
+        address: " No:295/1, Udagama Junction, Pinnawala",
+        phone: "070 26 36 711",
+        hours: "7.15 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:5,
+        name: "Kalthota  Collection Center",
+        address: " Opposite the Kalthota Hospital kalthota, Balangoda.",
+        phone: "0714998641",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:6,
+        name: " Mawela Collection Center",
+        address: "Thalakolahinna Mawela Balangoda.",
+        phone: "077 365 0097 / 076 106 1933",
+        hours: "7 AM - 4 PM  (Poya day closed)",    
+      },
+       {     
+        id:7,
+        name: " Oluganthota Collection Center",
+        address: " No 450H, Oluganthota, Balangoda",
+        phone: "0712104627",
+        hours: "6.30 AM - 7 PM / 6.30 AM - 4 PM - (Poya day)",    
+      },
+       {     
+        id:8,
+        name: " Udawela Collection Center",
+        address: "Udawela,Opanayaka.",
+        phone: "0702623864",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:9,
+        name: "Pambahinna Collection Center",
+        address: " Hospital Junction Samanalawewa Road Pambahinna Belihuloya ",
+        phone: "0710997917",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:10,
+        name: "Care Medical Center(Dr.Sujith Priyantha Kumara) ",
+        address: "No 32 Old Road Balangoda",
+        phone: "0778005024 / 0719180543",
+        hours: "7 AM - 12.30 PM  (Poya day closed)",    
+      },
+       {     
+        id:11,
+        name: " Suwasewana Medical Center",
+        address: " Balangoda Co-Oparative Balagahamula Balangoda",
+        phone: "0717129944",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      }
     ],
     mapQuery: "No.%20123%20Main%20Street,%20Balangoda,%20Sri%20Lanka+(Meditech%20Laboratory%20Balangoda)",
     color: "from-blue-500 to-blue-700",
     bgColor: "bg-gradient-to-br from-blue-50 to-blue-100",
   },
   {
-    name: "Rathnapura Branch",
-    address: "No. 456 Gem Street, Rathnapura, Sri Lanka",
-    phone: "+94 45 223 4455",
-    email: "rathnapura@meditech.lk",
-    specialties: ["CT Scan", "MRI", "Blood Tests", "Pathology"],
-    rating: 4.7,
-    hours: "6 AM - 10 PM",
-    collectionCenters: [
-      {
-        name: "Kuruwita Collection Center",
-        address: "No. 5, Main Road, Kuruwita",
-      },
-      {
-        name: "Eheliyagoda Collection Center",
-        address: "No. 8, Temple Road, Eheliyagoda",
-      },
-    ],
+    name: "Rathnapura Main Branch",
+    address: "No:344,Hospital Junction,Colombo Road,Meditech Laboratory Rathnapura.",
+    phone: "045 222 6446  / 071 155 6446",
+    email: "meditechrathnapura@gmail.com",
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
+    hours: "7 AM - 7 PM  (poyaday Closed)",
+    collectionCenters: [],
     detailedCenters: [
       {
-        id: 1,
-        address: "No. 234 Main Street, Rathnapura, Sri Lanka",
-        phone: "+94 45 333 4455",
-        email: "rathnapura@meditech.lk",
+        
+        id:1,
+        name: "Gorakaela Collection Center",
+        address: "Gorakaela Junction,Dodampe.",
+        phone: "071 551 5681",
+        hours: "7 AM - 11 AM",
+      
       },
       {
-        id: 2,
-        address: "No. 567 Gem Road, Rathnapura, Sri Lanka",
-        phone: "+94 45 333 6677",
-        email: "center2@meditech.lk",
+        id:2,
+        name: "Watapotha Collection Center",
+        address: "Watapotha Junction,Watapotha,Nivitigala.",
+        phone: "071 235 2689 / 076 215 4526",
+        hours: "7.45 AM - 5 PM",
       },
       {
-        id: 3,
-        address: "No. 890 Sabaragamuwa Avenue, Rathnapura, Sri Lanka",
-        phone: "+94 45 333 8899",
-        email: "center3@meditech.lk",
+        id:3,
+        name: "Malwala Collection Center",
+        address: "Medical Center,Badu waththa,Malwala,Rathnapura.",
+        phone: " 076 662 8850 / 071 396 0362",
+        hours: "7 AM - 10 AM (Poya day Closed)",
+      },
+      {
+        id:4,
+        name: "Sri palabaddala Collection Center",
+        address: "In front of sri palabaddala PMCU, sri palabaddala,Rathnapura.",
+        phone: " 076 674 5969",
+        hours: "7 AM - 10 AM (Sunday & poya day closed.)",
+      },
+      {
+        id:5,
+        name: "Erathna Collection Center",
+        address: "Gangabada,Erathna,Kuruwita,(Infront of New post office)",
+        phone: "074 289 2481 / 070 169 9989",
+        hours: "6.30 AM - 11 AM (Poya day Closed)",
+      },
+      {
+        id:6,
+        name: "Gilimale -Thannahena Collection Center",
+        address: "Medical Center Thannahena,Gilimale,Rathnapura.",
+        phone: "077 245 5566 / 071 807 8081",
+        hours: "6.45 AM - 12 Noon (Poya day Closed)",
+      },
+       {
+        id:7,
+        name: "Gilimale Collection Center",
+        address: " In front of Gilimale Hospital,Gilimale,Rathnapura.",
+        phone: " 077 820 8324",
+        hours: "6.45 AM - 4 PM (Poya day Closed)",
+      },
+      {
+        id:8,
+        name: "Welimaluwa Collection Center",
+        address: "Medical center Welimaluwa,Rathnapura.",
+        phone: "071 904 5733 / 071 895 6786",
+        hours: "7 AM - 10 AM (Poya day Closed)",
+      },
+       {
+        id:9,
+        name: "Baanagoda Collection Center",
+        address: "Medical center Near the Sub post office,Baanagoda, lellopitiya, Rathnapura ",
+        phone: "071 902 0685 / 071 929 7319",
+        hours: "7 AM - 10 AM (Sunday and poya day closed.)",
+      },
+      {
+        id:10,
+        name: "Paradise Collection Center",
+        address: "In front of Vijaya kumarathunga Vidyalaya, paradise, kuruwita.",
+        phone: "076 749 1545 / 076 797 4696",
+        hours: "7 AM - 10 AM (poya day closed.)",
+      },
+       {
+        id:11,
+        name: "Hidellana Collection Center",
+        address: "Near the weragoda temple, Medical center, Weragoda,Hidellana, Rathnapura.",
+        phone: "077 788 9942 / 077 883 3725",
+        hours: "7 AM - 10 AM (poya day closed.)",
+      },
+      {
+        id:12,
+        name: "Rathnapura Town Collection Center",
+        address: "Medical center, Near the prasanna gems,Rathnapura.",
+        phone: "071 155 6446",
+        hours: "7 AM - 10 AM (poya day closed.)",
+      },
+      {
+        id:13,
+        name: "Ganegama Collection Center",
+        address: "Ganegama Junction, Ganegama, pelmadulla.",
+        phone: "077 177 5132 / 071 174 1770",
+        hours: "7 AM - 10 AM (poya day closed.)",
+      },
+      {
+        id:14,
+        name: "Sannasgama Collection Center",
+        address: "Medex Pharmacy & Medicare Medical Center,Sannasgama,pelmadulla.",
+        phone: "070 202 9177 / 071 174 1770",
+        hours: "7 AM - 4 PM",
+      },
+      {
+        id:15,
+        name: "Yakdehiwaththa Collection Center",
+        address: "Medical center, Medical center, yakdehiwaththa, Nivitigala.",
+        phone: "071 323 6301 / 077 883 3725",
+        hours: "7 AM - 10 AM (Poya day closed)",
+      },
+      {
+        id:16,
+        name: "Nivitigala Collection Center",
+        address: "Jayaruwan Medical Center,In front of BOC bank, Nivitigala.",
+        phone: "074 348 2651",
+        hours: "7 AM - 5 PM (Poya day closed)",
       },
     ],
     mapQuery: "No.%20234%20Main%20Street,%20Rathnapura,%20Sri%20Lanka+(Meditech%20Laboratory%20Rathnapura)",
@@ -91,41 +238,95 @@ const branches = [
     bgColor: "bg-gradient-to-br from-blue-50 to-sky-100",
   },
   {
-    name: "Welimada Branch",
-    address: "No. 789 Hill Street, Welimada, Sri Lanka",
+    name: "Welimada Main Branch",
+    address: "No:789 Hill Street, Welimada, Sri Lanka",
     phone: "+94 52 224 5566",
     email: "welimada@meditech.lk",
-    specialties: ["Cardiology", "Neurology", "Blood Tests", "Imaging"],
-    rating: 4.6,
-    hours: "7 AM - 9 PM",
-    collectionCenters: [
-      {
-        name: "Uva-Paranagama Collection Center",
-        address: "No. 3, Station Road, Uva-Paranagama",
-      },
-      {
-        name: "Hali-Ela Collection Center",
-        address: "No. 6, Market Road, Hali-Ela",
-      },
-    ],
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
+    hours: "7 AM - 9 PM  (Poya Day closed.)",
+    collectionCenters: [],
     detailedCenters: [
       {
-        id: 1,
-        address: "No. 789 Hill Street, Welimada, Sri Lanka",
-        phone: "+94 52 444 5566",
-        email: "welimada@meditech.lk",
+        id:1,
+        name: "Nugathalawa Collection Center",
+        address: "Nuwaraeliya Road Nugathalawa.",
+        phone: "0713776200",
+        hours: "7 AM - 9 AM",
       },
       {
         id: 2,
-        address: "No. 101 Tea Estate Road, Welimada, Sri Lanka",
-        phone: "+94 52 444 7788",
-        email: "center2@meditech.lk",
+        name: "Boragas Collection Center",
+        address: "Rendapola,Boragas",
+        phone: "0712255060",
+        hours: "6.45 AM - 9.30 AM | 4 PM-8 PM",
       },
       {
         id: 3,
-        address: "No. 203 Mountain View, Welimada, Sri Lanka",
-        phone: "+94 52 444 9900",
-        email: "center3@meditech.lk",
+        name: "Ambagasdowa Collection Center",
+        address: "Near Temple Ambagasdowa",
+        phone: "071661563",
+        hours: "7 AM - 8 AM",
+      },
+        {
+        id: 4,
+        name: "Madawela Collection Center",
+        address: "Daya stores,Walahamulla.",
+        phone: "0703900787",
+        hours: "7 AM - 8 AM",
+      },
+        {
+        id: 5,
+        name: "Guruthalawa Collection Center",
+        address: "Medical center Main Street Guruthalawa",
+        phone: "0774177509",
+        hours: "7 AM - 9 AM",
+      },
+        {
+        id: 6,
+        name: "Sappukade Collection Center",
+        address: "Sappukade welimada",
+        phone: "0715557339",
+        hours: "7 AM - 8 AM",
+      },
+        {
+        id: 7,
+        name: "Mirahawatta Collection Center",
+        address: "Near hospital Mirahawatta",
+        phone: "0703061376",
+        hours: "7 AM - 10 AM(Tuesday,Thursday , Saturday )",
+      },
+       {
+        id: 8,
+        name: "Diaraba Collection Center",
+        address: "Bandarawela road Diaraba",
+        phone: "0703061376",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 9,
+        name: "Welimada town Collection Center",
+        address: "Hospital roadWelimada",
+        phone: "0767221044",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 10,
+        name: "Rendapola Collection Center",
+        address: "Nuwaraeliya roadRendapola",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 11,
+        name: "Puhulpola Collection Center",
+        address: "Bandarawela roadPuhulpola",
+        phone: "0703061376",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 12,
+        name: "Udubadana Collection Center",
+        address: "Udubadana Welimada",
+        hours: "7 AM - 9 AM",
       },
     ],
     mapQuery: "No.%20789%20Hill%20Street,%20Welimada,%20Sri%20Lanka+(Meditech%20Laboratory%20Welimada)",
@@ -133,41 +334,53 @@ const branches = [
     bgColor: "bg-gradient-to-br from-blue-100 to-indigo-100",
   },
   {
-    name: "Kalawana Branch",
-    address: "No. 321 River Road, Kalawana, Sri Lanka",
-    phone: "+94 45 225 6677",
-    email: "kalawana@meditech.lk",
-    specialties: ["General Testing", "Vaccination", "Health Checkups"],
-    rating: 4.5,
-    hours: "8 AM - 8 PM",
-    collectionCenters: [
-      {
-        name: "Nivitigala Collection Center",
-        address: "No. 7, School Lane, Nivitigala",
-      },
-      {
-        name: "Ayagama Collection Center",
-        address: "No. 9, Bazaar Street, Ayagama",
-      },
-    ],
+    name: "Kalawana Main Branch",
+    address: "HOSPITAL ROAD, KALAWANA",
+    phone: ["0452255370 / 0717647460"],
+    email: "kalawanalab@gmail.com",
+    specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
+    hours: "6 AM - 7 PM",
+    collectionCenters: [],
     detailedCenters: [
       {
-        id: 1,
-        address: "No. 321 River Road, Kalawana, Sri Lanka",
-        phone: "+94 45 555 6677",
-        email: "kalawana@meditech.lk",
+        id:1,
+        name: "Weddagala Collection Center",
+        address: "kudawa Road, Weddagala",
+        phone: "+94 71 212 6728",
+        email:"Weddagalameditech@gmail.com",
+        hours: "7 AM - 12 noon",
       },
       {
-        id: 2,
-        address: "No. 432 Forest Avenue, Kalawana, Sri Lanka",
-        phone: "+94 45 555 8899",
-        email: "center2@meditech.lk",
+        id:2,
+        name: "Delwala Collection Center",
+        address: "Infront Of PMCU, Delwala",
+        phone: "+94 70 140 8712",
+        email:"Meditechdelwala@gmail.com",
+        hours: "7 AM - 4 PM",
       },
       {
-        id: 3,
-        address: "No. 543 Valley Road, Kalawana, Sri Lanka",
-        phone: "+94 45 555 1122",
-        email: "center3@meditech.lk",
+         id:3,
+        name: "Karavita Collection Center",
+        address: "Near to Primary School, Karavita Jnction",
+        phone: "+94 76 736 8078",
+        email:"Meditechkaravita@gmail.com",
+        hours: "7 AM - 12 noon",
+      },
+      {
+         id:4,
+         name: "Pothupitiya Collection Center",
+        address: "Kalawana road, Pothupitiya",
+        phone: "+94 45 313 0233",
+        email:"Meditechpothupitiya@gmail.com",
+        hours: "7 AM - 6 PM",
+      },
+      {
+        id:5,
+        name: "Rabuka Collection Center",
+        address: "Rabuka Junction, Pothupitiya",
+        phone: "+94 71 460 4029",
+        email: "Meditechrabuka@gmail.com",
+        hours: "7 AM - 6 PM"
       },
     ],
     mapQuery: "No.%20321%20River%20Road,%20Kalawana,%20Sri%20Lanka+(Meditech%20Laboratory%20Kalawana)",
@@ -175,327 +388,23 @@ const branches = [
     bgColor: "bg-gradient-to-br from-blue-50 to-blue-150",
   },
 ];
+      <div className="bg-white">
+      <BackgroundElements/>,
+      <HeroSection/>,
+      <CollectionCenter/>,
+      <BranchCard/>,
+      <MainMapSection/>,
+      <ModalHeader/>,
+      <SpecialtiesBanner/>,
+      <DetailedCenter/>,
+      <MapAndCentersGrid/>,
+      <ContactSection/>,
+      <BranchModal/>
 
-<BackgroundElements/>
-
-
-// Hero Section Component
-const HeroSection = () => (
-  <div className="text-center mb-16 bg-blue-50">
-    <div className="inline-flex items-center gap-3 bg-blue-100/50 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-6">
-      <Building2 className="w-6 h-6 text-blue-600" />
-      <span className="text-blue-800 font-semibold">Trusted Healthcare Network</span>
-    </div>
-    <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent mb-6 leading-tight">
-      Our Laboratory Network
-    </h1>
-    <p className="text-xl text-blue-700 mb-8 max-w-4xl mx-auto leading-relaxed">
-      MediTech Laboratory operates a comprehensive network of branches and collection
-      centers across Sri Lanka, delivering world-class diagnostic services with 
-      cutting-edge technology and compassionate care.
-    </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
-        <Star className="w-5 h-5 text-yellow-500 fill-current" />
-        <span className="text-blue-700 font-medium">4.7+ Average Rating</span>
-      </div>
-      <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
-        <MapPin className="w-5 h-5 text-blue-500" />
-        <span className="text-blue-700 font-medium">4 Branches • 12 Centers</span>
-      </div>
-    </div>
-  </div>
-);
-
-// Collection Center Component
-const CollectionCenter = ({ center, branch }) => (
-  <div className="flex items-start gap-3 p-3 bg-white/60 backdrop-blur-sm rounded-xl border border-white/50">
-    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${branch.color} mt-2 flex-shrink-0`}></div>
-    <div>
-      <p className="font-medium text-blue-800 text-sm">{center.name}</p>
-      <p className="text-blue-600 text-xs">{center.address}</p>
-    </div>
-  </div>
-);
-
-// Branch Card Component
-const BranchCard = ({ branch, index, onOpenPopup, hoveredCard, onHover, onHoverEnd }) => (
-  <div 
-    className={`group relative overflow-hidden bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${branch.bgColor} border border-white/50`}
-    onMouseEnter={() => onHover(index)}
-    onMouseLeave={onHoverEnd}
-  >
-    {/* Gradient Overlay */}
-    <div className={`absolute inset-0 bg-gradient-to-br ${branch.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-    
-    <div className="relative p-8">
-      {/* Header */}
-      <div className="flex items-start justify-between mb-6">
-        <div className="flex-1">
-          <button 
-            onClick={() => onOpenPopup(branch)}
-            className="block text-left group/button"
-          >
-            <h2 className={`text-2xl font-bold bg-gradient-to-r ${branch.color} bg-clip-text text-transparent mb-2 group-hover/button:scale-105 transition-transform duration-300`}>
-              {branch.name}
-            </h2>
-          </button>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className={`w-4 h-4 ${i < Math.floor(branch.rating) ? 'text-yellow-400 fill-current' : 'text-blue-300'}`} />
-              ))}
-            </div>
-            <span className="text-sm text-blue-600 font-medium">{branch.rating}</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-3 py-1 rounded-full">
-          <Clock className="w-4 h-4 text-blue-600" />
-          <span className="text-sm font-medium text-blue-700">{branch.hours}</span>
-        </div>
       </div>
 
-      {/* Contact Info */}
-      <div className="space-y-3 mb-6">
-        <div className="flex items-start gap-3">
-          <MapPin className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-          <p className="text-blue-800">{branch.address}</p>
-        </div>
-        <div className="flex items-center gap-3">
-          <Phone className="w-5 h-5 text-blue-500 flex-shrink-0" />
-          <p className="text-blue-800">{branch.phone}</p>
-        </div>
-        <div className="flex items-center gap-3">
-          <Mail className="w-5 h-5 text-blue-500 flex-shrink-0" />
-          <p className="text-blue-800">{branch.email}</p>
-        </div>
-      </div>
-
-      {/* Specialties */}
-      <div className="mb-6">
-        <h3 className="text-sm font-semibold text-blue-800 mb-3 uppercase tracking-wider">
-          Specialties
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          {branch.specialties.map((specialty, idx) => (
-            <span key={idx} className={`px-3 py-1 bg-gradient-to-r ${branch.color} text-white text-xs font-medium rounded-full shadow-sm`}>
-              {specialty}
-            </span>
-          ))}
-        </div>
-      </div>
-      
-      {/* Collection Centers */}
-      <div className="mb-6">
-        <h3 className="text-sm font-semibold text-blue-800 mb-3 uppercase tracking-wider">
-          Collection Centers
-        </h3>
-        <div className="space-y-2">
-          {branch.collectionCenters.map((center, idx) => (
-            <CollectionCenter key={idx} center={center} branch={branch} />
-          ))}
-        </div>
-      </div>
-      
-      {/* Action Button */}
-      <button 
-        onClick={() => onOpenPopup(branch)}
-        className={`w-full bg-gradient-to-r ${branch.color} text-white px-6 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group/btn`}
-      >
-        <Navigation className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
-        View Details & Map
-        <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-      </button>
-    </div>
-  </div>
-);
-
-// Main Map Section Component
-const MainMapSection = () => (
-  <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-5 border border-white/50">
-    <div className="text-center mb-8">
-      <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-4">
-        Find us on the map
-      </h2>
-      <p className="text-lg text-blue-800 max-w-1xl mx-auto">
-        Our flagship laboratory in Balangoda serves as the heart of our network. 
-        Explore individual branches for specific locations and services.
-      </p>
-    </div>
-    <div className="flex justify-center">
-      <div className="rounded-xl overflow-hidden shadow-5xl ring-1 ring-black/5" style={{ width: '100%', maxWidth: '500px', height: '400px' }}>
-        <iframe
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          src="https://maps.google.com/maps?width=800&height=450&hl=en&q=Meditech%20Laboratory%20Balangoda&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-          title="Meditech Laboratory Map"
-          className="w-full h-full"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-);
-
-// Modal Header Component
-const ModalHeader = ({ branch, onClose }) => (
-  <div className={`sticky top-0 bg-gradient-to-r ${branch.color} text-white px-8 py-6 flex justify-between items-center rounded-t-3xl`}>
-    <div>
-      <h2 className="text-3xl font-bold">
-        {branch.name.replace(' (Main Branch)', '')} Branch
-      </h2>
-      <div className="flex items-center gap-4 mt-2">
-        <div className="flex items-center gap-1">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className={`w-4 h-4 ${i < Math.floor(branch.rating) ? 'text-yellow-300 fill-current' : 'text-white/50'}`} />
-          ))}
-          <span className="ml-2 text-white/90">{branch.rating}</span>
-        </div>
-        <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-          <Clock className="w-4 h-4" />
-          <span className="text-sm">{branch.hours}</span>
-        </div>
-      </div>
-    </div>
-    <button
-      onClick={onClose}
-      className="text-white/80 hover:text-white hover:bg-white/20 rounded-full p-2 transition-all duration-200"
-    >
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
-);
-
-// Specialties Banner Component
-const SpecialtiesBanner = ({ branch }) => (
-  <div className="mb-10">
-    <h3 className="text-xl sm:text-2xl font-bold text-blue-800 mb-4 text-center px-4">Our Specialties</h3>
-    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 px-4 sm:px-6 lg:px-8">
-      {branch.specialties.map((specialty, idx) => (
-        <span 
-          key={idx} 
-          className={`px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-gradient-to-r ${branch.color} text-white text-xs sm:text-sm md:text-base font-semibold rounded-full shadow-lg transition-transform hover:scale-105 duration-200`}
-        >
-          {specialty}
-        </span>
-      ))}
-    </div>
-  </div>
-);
-
-// Detailed Center Component
-const DetailedCenter = ({ center, branch }) => (
-  <div className={`${branch.bgColor} p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300`}>
-    <div className="flex items-start gap-4">
-      <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${branch.color} text-white flex items-center justify-center font-bold flex-shrink-0`}>
-        {center.id < 10 ? `0${center.id}` : center.id}
-      </div>
-      <div className="flex-1 space-y-2">
-        <div className="flex items-start gap-2">
-          <MapPin className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
-          <p className="text-blue-800 font-medium">{center.address}</p>
-        </div>
-        <div className="flex items-center gap-2">
-          <Phone className="w-4 h-4 text-blue-500 flex-shrink-0" />
-          <p className="text-blue-800">{center.phone}</p>
-        </div>
-        <div className="flex items-center gap-2">
-          <Mail className="w-4 h-4 text-blue-500 flex-shrink-0" />
-          <p className="text-blue-800">{center.email}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-// Map and Centers Grid Component
-const MapAndCentersGrid = ({ branch }) => (
-  <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 mb-10">
-    {/* Google Map */}
-    <div className="order-2 xl:order-1">
-      <h3 className="text-2xl font-bold text-blue-800 mb-4 flex items-center gap-2">
-        <MapPin className="w-6 h-6 text-blue-600" />
-        Branch Location
-      </h3>
-      <div className="rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5">
-        <iframe
-          width="100%"
-          height="450"
-          loading="lazy"
-          style={{ border: 0 }}
-          allowFullScreen
-          src={`https://maps.google.com/maps?width=100%&height=450&hl=en&q=${branch.mapQuery}&t=&z=14&ie=UTF8&iwloc=B&output=embed`}
-        ></iframe>
-      </div>
-    </div>
-
-    {/* Collection Centers */}
-    <div className="order-1 xl:order-2">
-      <h3 className="text-2xl font-bold text-blue-800 mb-4 flex items-center gap-2">
-        <Building2 className="w-6 h-6 text-blue-600" />
-        Collection Centers
-      </h3>
-      <div className="space-y-4">
-        {branch.detailedCenters.map((center) => (
-          <DetailedCenter key={center.id} center={center} branch={branch} />
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-// Contact Section Component
-const ContactSection = ({ branch }) => (
-  <div className={`${branch.bgColor} rounded-2xl p-8 text-center border border-white/50`}>
-    <h3 className="text-2xl font-bold text-blue-800 mb-4">Need Assistance?</h3>
-    <p className="text-lg text-blue-800 max-w-2xl mx-auto mb-6">
-      Our dedicated team in {branch.name.replace(' (Main Branch)', '').replace(' Branch', '')} 
-      is ready to assist you with appointments, test results, and any questions about our services.
-    </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href={`tel:${branch.phone}`} className={`inline-flex items-center gap-2 bg-gradient-to-r ${branch.color} text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300`}>
-        <Phone className="w-5 h-5" />
-        Call Now
-      </a>
-      <a href={`mailto:${branch.email}`} className="inline-flex items-center gap-2 bg-white text-blue-800 px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-200">
-        <Mail className="w-5 h-5" />
-        Send Email
-      </a>
-    </div>
-  </div>
-);
-
-// Branch Modal Component
-const BranchModal = ({ selectedBranch, onClose }) => {
-  if (!selectedBranch) return null;
-
-  return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-in fade-in duration-300">
-      <div className="bg-white rounded-3xl max-w-7xl w-full max-h-[95vh] overflow-y-auto shadow-2xl animate-in slide-in-from-bottom-4 duration-500">
-        <ModalHeader branch={selectedBranch} onClose={onClose} />
-        <div className="p-8">
-          <div className="text-center mb-10">
-            <p className="text-xl text-blue-800 max-w-3xl mx-auto leading-relaxed">
-              Welcome to our {selectedBranch.name.replace(' (Main Branch)', '')} branch. 
-              We are committed to delivering exceptional diagnostic services with 
-              state-of-the-art equipment and experienced medical professionals.
-            </p>
-          </div>
-          <SpecialtiesBanner branch={selectedBranch} />
-          <MapAndCentersGrid branch={selectedBranch} />
-          <ContactSection branch={selectedBranch} />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Main Component
 const LaboratoryNetwork = () => {
+
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
 
@@ -508,7 +417,7 @@ const LaboratoryNetwork = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100">
+    <div className="min-h-screen bg-white from-blue-50 via-blue-100 to-indigo-100">
       <BackgroundElements />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

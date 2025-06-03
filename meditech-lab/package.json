@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.12.2",
     "lucide-react": "^0.503.0",
     "mongoose": "^8.15.0",
