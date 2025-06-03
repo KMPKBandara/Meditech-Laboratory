@@ -135,7 +135,7 @@ const handleEditClick = (centerToEdit) => {
   });
   setActiveTab('add');
   console.log("Frontend: handleEditClick - Editing ID set to:", centerToEdit._id); // <-- ADD THIS LOG
-  console.log("Frontend: handleEditClick - Form pre-populated with:", form); // <-- ADD THIS LOG (might show old state due to async setForm, but useful)
+  console.log("Frontend: handleEditClick - Form pre-populated with:", centerToEdit); // <-- ADD THIS LOG (might show old state due to async setForm, but useful)
 };
 
   useEffect(() => {
@@ -293,13 +293,13 @@ const handleEditClick = (centerToEdit) => {
                           onClick={() => handleEditClick(center)}
                           className="text-blue-600 hover:text-blue-800"
                         >
-                          <Edit className="w-4 h-4 inline" />
+                          <Edit className="inline w-4 h-4" />
                         </button>
                         <button
                           onClick={() => handleDelete(center._id)}
                           className="text-red-600 hover:text-red-800"
                         >
-                          <Trash2 className="w-4 h-4 inline" />
+                          <Trash2 className="inline w-4 h-4" />
                         </button>
                       </td>
                     </tr>
