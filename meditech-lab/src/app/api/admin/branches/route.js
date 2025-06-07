@@ -1,22 +1,29 @@
 // src/app/api/admin/branches/route.js
 import dbConnect from "@/app/admin/lib/mongodb";
 import { NextResponse } from "next/server";
-import Branch from "@/models/Branch"; // <--- Import your Branch model here
+import { getServerSession } from "next-auth"; // <--- ADD THIS LINE
+import { authOptions } from "../../auth/[...nextauth]/route";
+import Branch from "@/models/Branch";
 
-// The getBranchModel function is now much simpler!
 function getBranchModel() {
-  return Branch; // Just return the imported model
+  return Branch;
 }
 
 export async function POST(req) {
+  const session = await getServerSession(authOptions);
+
+  if (!session || session.user.role !== "admin") {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
   await dbConnect();
-  const BranchModel = getBranchModel(); // Use BranchModel to avoid naming conflict with import
+  const BranchModel = getBranchModel();
 
   const data = await req.json();
 
   try {
     const branch = await BranchModel.create(data);
-    return NextResponse.json(branch, { status: 201 }); // 201 Created
+    return NextResponse.json(branch, { status: 201 });
   } catch (err) {
     console.error("Error creating branch:", err);
     return NextResponse.json(
@@ -31,11 +38,18 @@ export async function POST(req) {
 }
 
 export async function GET(req) {
+  // Authentication and Authorization Check
+  const session = await getServerSession(authOptions); // This line needs the import
+
+  if (!session || session.user.role !== "admin") {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     await dbConnect();
-    const BranchModel = getBranchModel(); // Use BranchModel
+    const BranchModel = getBranchModel();
 
-    const branches = await BranchModel.find({}); // Fetch all branches
+    const branches = await BranchModel.find({});
     return NextResponse.json(branches);
   } catch (err) {
     console.error("Error fetching branches:", err);

@@ -1,3 +1,4 @@
+"use client";
 // meditech-lab/src/app/admin/collection-centers/page.jsx
 export default function CollectionCentersPage() {
   return (
