@@ -18,31 +18,92 @@ import BranchModal from "@/components/network/branchModal";
 const branches = [
   {
     name: "Balangoda Main Branch",
-    address: "No. 123 Main Street, Balangoda, Sri Lanka",
-    phone: "+94 45 222 3344",
-    email: "balangoda@meditech.lk",
+    address: "No:08 Kalthota Road Balagahamula Meditech Laboratory Balangoda ",
+    phone: "0452288388 / 0717184606 / 0715179093 / Whatsapp - 0715179093",
+    email: "-----------",
     specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
     hours: "24/7",
     collectionCenters: [],
     detailedCenters: [
-      {
-        id: 1,
-        address: "No. 123 Main Street, Balangoda, Sri Lanka",
-        phone: "+94 45 222 3344",
-        email: "balangoda@meditech.lk",
+     {     
+        id:1,
+        name: "Waleboda Collection Center",
+        address: "Manathunkanda, Egoda, waleboda",
+        phone: "0772712861 / 0717416648",
+        hours: "7 AM - 5 PM (Poya Day Closed)",
+      
       },
-      {
-        id: 2,
-        address: "No. 456 Lake Road, Balangoda, Sri Lanka",
-        phone: "+94 45 222 5566",
-        email: "center2@meditech.lk",
+      {     
+        id:2,
+        name: " Rassagala Collection Center",
+        address: " Rassagala,Balangoda(Rassagala Town)",
+        phone: "0716519386",
+        hours: "7 AM - 10 PM / 4 PM - 7.30 PM(Poya day and sunday closed)",
+      
       },
-      {
-        id: 3,
-        address: "No. 789 Hill Avenue, Balangoda, Sri Lanka",
-        phone: "+94 45 222 7788",
-        email: "center3@meditech.lk",
+      {     
+        id:3,
+        name: " Balangoda Privet Hospital ",
+        address: " No:10, Karawketiya Road, Balangoda",
+        phone: "071-4453493",
+        hours: "7 AM - 7 PM / 6.30 PM - 4 P - (Poya day)",    
       },
+       {     
+        id:4,
+        name: "Pinnawala Privet Hospital ",
+        address: " No:295/1, Udagama Junction, Pinnawala",
+        phone: "070 26 36 711",
+        hours: "7.15 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:5,
+        name: "Kalthota  Collection Center",
+        address: " Opposite the Kalthota Hospital kalthota, Balangoda.",
+        phone: "0714998641",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:6,
+        name: " Mawela Collection Center",
+        address: "Thalakolahinna Mawela Balangoda.",
+        phone: "077 365 0097 / 076 106 1933",
+        hours: "7 AM - 4 PM  (Poya day closed)",    
+      },
+       {     
+        id:7,
+        name: " Oluganthota Collection Center",
+        address: " No 450H, Oluganthota, Balangoda",
+        phone: "0712104627",
+        hours: "6.30 AM - 7 PM / 6.30 AM - 4 PM - (Poya day)",    
+      },
+       {     
+        id:8,
+        name: " Udawela Collection Center",
+        address: "Udawela,Opanayaka.",
+        phone: "0702623864",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:9,
+        name: "Pambahinna Collection Center",
+        address: " Hospital Junction Samanalawewa Road Pambahinna Belihuloya ",
+        phone: "0710997917",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      },
+       {     
+        id:10,
+        name: "Care Medical Center(Dr.Sujith Priyantha Kumara) ",
+        address: "No 32 Old Road Balangoda",
+        phone: "0778005024 / 0719180543",
+        hours: "7 AM - 12.30 PM  (Poya day closed)",    
+      },
+       {     
+        id:11,
+        name: " Suwasewana Medical Center",
+        address: " Balangoda Co-Oparative Balagahamula Balangoda",
+        phone: "0717129944",
+        hours: "7 AM - 5 PM  (Poya day closed)",    
+      }
     ],
     mapQuery: "No.%20123%20Main%20Street,%20Balangoda,%20Sri%20Lanka+(Meditech%20Laboratory%20Balangoda)",
     color: "from-blue-500 to-blue-700",
@@ -50,7 +111,7 @@ const branches = [
   },
   {
     name: "Rathnapura Main Branch",
-    address: "No 344,Hospital Junction,Colombo Road,Rathnapura.",
+    address: "No:344,Hospital Junction,Colombo Road,Meditech Laboratory Rathnapura.",
     phone: "045 222 6446  / 071 155 6446",
     email: "meditechrathnapura@gmail.com",
     specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
@@ -178,30 +239,94 @@ const branches = [
   },
   {
     name: "Welimada Main Branch",
-    address: "No. 789 Hill Street, Welimada, Sri Lanka",
+    address: "No:789 Hill Street, Welimada, Sri Lanka",
     phone: "+94 52 224 5566",
     email: "welimada@meditech.lk",
     specialties: ["Blood Tests", "X-Ray", "ECG", "Ultrasound","CT Scan", "MRI"],
-    hours: "7 AM - 9 PM",
+    hours: "7 AM - 9 PM  (Poya Day closed.)",
     collectionCenters: [],
     detailedCenters: [
       {
-        id: 1,
-        address: "No. 789 Hill Street, Welimada, Sri Lanka",
-        phone: "+94 52 444 5566",
-        email: "welimada@meditech.lk",
+        id:1,
+        name: "Nugathalawa Collection Center",
+        address: "Nuwaraeliya Road Nugathalawa.",
+        phone: "0713776200",
+        hours: "7 AM - 9 AM",
       },
       {
         id: 2,
-        address: "No. 101 Tea Estate Road, Welimada, Sri Lanka",
-        phone: "+94 52 444 7788",
-        email: "center2@meditech.lk",
+        name: "Boragas Collection Center",
+        address: "Rendapola,Boragas",
+        phone: "0712255060",
+        hours: "6.45 AM - 9.30 AM | 4 PM-8 PM",
       },
       {
         id: 3,
-        address: "No. 203 Mountain View, Welimada, Sri Lanka",
-        phone: "+94 52 444 9900",
-        email: "center3@meditech.lk",
+        name: "Ambagasdowa Collection Center",
+        address: "Near Temple Ambagasdowa",
+        phone: "071661563",
+        hours: "7 AM - 8 AM",
+      },
+        {
+        id: 4,
+        name: "Madawela Collection Center",
+        address: "Daya stores,Walahamulla.",
+        phone: "0703900787",
+        hours: "7 AM - 8 AM",
+      },
+        {
+        id: 5,
+        name: "Guruthalawa Collection Center",
+        address: "Medical center Main Street Guruthalawa",
+        phone: "0774177509",
+        hours: "7 AM - 9 AM",
+      },
+        {
+        id: 6,
+        name: "Sappukade Collection Center",
+        address: "Sappukade welimada",
+        phone: "0715557339",
+        hours: "7 AM - 8 AM",
+      },
+        {
+        id: 7,
+        name: "Mirahawatta Collection Center",
+        address: "Near hospital Mirahawatta",
+        phone: "0703061376",
+        hours: "7 AM - 10 AM(Tuesday,Thursday , Saturday )",
+      },
+       {
+        id: 8,
+        name: "Diaraba Collection Center",
+        address: "Bandarawela road Diaraba",
+        phone: "0703061376",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 9,
+        name: "Welimada town Collection Center",
+        address: "Hospital roadWelimada",
+        phone: "0767221044",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 10,
+        name: "Rendapola Collection Center",
+        address: "Nuwaraeliya roadRendapola",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 11,
+        name: "Puhulpola Collection Center",
+        address: "Bandarawela roadPuhulpola",
+        phone: "0703061376",
+        hours: "7 AM - 9 AM",
+      },
+       {
+        id: 12,
+        name: "Udubadana Collection Center",
+        address: "Udubadana Welimada",
+        hours: "7 AM - 9 AM",
       },
     ],
     mapQuery: "No.%20789%20Hill%20Street,%20Welimada,%20Sri%20Lanka+(Meditech%20Laboratory%20Welimada)",
@@ -292,7 +417,7 @@ const LaboratoryNetwork = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white from-blue-50 via-blue-100 to-indigo-100">
+    <div className="min-h-screen bg-white from-white-50 via-white-100 to-indigo-100">
       <BackgroundElements />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

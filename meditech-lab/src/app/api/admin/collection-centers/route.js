@@ -1,10 +1,12 @@
-// src/app/api/admin/collection-centers/route.js (NEW File 2)
+// src/app/api/admin/collection-centers/route.js
 import dbConnect from "@/app/admin/lib/mongodb";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
+import { getServerSession } from "next-auth"; // NEW: Import getServerSession
+import { authOptions } from "../../auth/[...nextauth]/route"; // NEW: Import your auth options
 
 // Define the CollectionCenter Schema directly in the API route file
-// IMPORTANT: This schema definition must be consistent between both route.js files
+// IMPORTANT: This schema definition must be consistent if you use it elsewhere
 const collectionCenterSchema = new mongoose.Schema(
   {
     name: String,
@@ -16,11 +18,11 @@ const collectionCenterSchema = new mongoose.Schema(
       ref: "Branch",
     },
   },
-  { collection: "collectioncenters" }
+  { collection: "collectioncenters", timestamps: true } // Added timestamps for consistency
 );
 
 // Function to get or define the CollectionCenter model
-// IMPORTANT: This helper function must be consistent between both route.js files
+// IMPORTANT: This helper function must be consistent if you use it elsewhere
 function getCollectionCenterModel() {
   try {
     return mongoose.model("CollectionCenter");
@@ -30,7 +32,14 @@ function getCollectionCenterModel() {
 }
 
 export async function POST(req) {
-  // <-- Handles /api/admin/collection-centers
+  // NEW: Authentication and Authorization Check
+  const session = await getServerSession(authOptions);
+
+  if (!session || session.user.role !== "admin") {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+  // END NEW: Authentication and Authorization Check
+
   await dbConnect();
   const CollectionCenter = getCollectionCenterModel();
 
@@ -44,7 +53,7 @@ export async function POST(req) {
 
     const center = await CollectionCenter.create(objectToCreate);
 
-    return NextResponse.json(center);
+    return NextResponse.json(center, { status: 201 }); // 201 Created
   } catch (err) {
     console.error("❌ Fatal Error creating collection center:", err);
     return NextResponse.json(
@@ -59,15 +68,26 @@ export async function POST(req) {
 }
 
 export async function GET(req) {
-  // <-- Handles /api/admin/collection-centers
+  // NEW: Authentication and Authorization Check
+  const session = await getServerSession(authOptions);
+
+  if (!session || session.user.role !== "admin") {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+  // END NEW: Authentication and Authorization Check
+
   try {
     await dbConnect();
     const CollectionCenter = getCollectionCenterModel();
-    // If you want to populate branch details for the table, add .populate('branchId') here:
-    const centers = await CollectionCenter.find(); // .populate('branchId') if you want branch object
-    return NextResponse.json(centers); // Changed from Response.json for consistency
+
+    // Fetch all collection centers
+    const centers = await CollectionCenter.find({});
+    return NextResponse.json(centers);
   } catch (err) {
-    console.error("Error fetching collection centers:", err); // Added error logging
-    return NextResponse.json({ message: "Failed to fetch" }, { status: 500 }); // Changed from new Response for consistency
+    console.error("Error fetching collection centers:", err);
+    return NextResponse.json(
+      { message: "Failed to fetch collection centers", error: err.message },
+      { status: 500 }
+    );
   }
 }
