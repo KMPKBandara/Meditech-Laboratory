@@ -6,10 +6,10 @@ const HeroSection = () => (
       <Building2 className="w-6 h-6 text-blue-600" />
       <span className="text-blue-800 font-semibold">Trusted Healthcare Network</span>
     </div>
-    <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent mb-6 leading-tight">
+    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
       Our Laboratory Network
     </h1>
-    <p className="text-xl text-black-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+    <p className="text-xl text-black-400 mb-8 max-w-4xl mx-auto leading-relaxed">
       MediTech Laboratory operates a comprehensive network of branches and collection
       centers across Sri Lanka, delivering world-class diagnostic services with 
       cutting-edge technology and compassionate care.
