@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   FaFacebookF,
-  FaTwitter,
+  FaWhatsapp,
   FaInstagram,
   FaLinkedinIn,
   FaSearch,
@@ -86,17 +86,34 @@ const Top = () => {
 
         {/* Social Icons */}
         <div className="absolute right-2 top-1/2 -translate-y-1/2 z-40 flex flex-col space-y-3">
-          {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map(
-            (Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="bg-black/70 hover:bg-blue-600 text-white p-3 rounded-full text-xl transition"
-              >
-                <Icon />
-              </a>
-            )
-          )}
+          {[
+            {
+              icon: FaFacebookF,
+              url: "https://www.facebook.com/share/1F1VQGzAWT/",
+            },
+            {
+              icon: FaWhatsapp,
+              url: "https://whatsapp.com/channel/0029Vb6N0fa3GJOvjfwpI421",
+            },
+            {
+              icon: FaInstagram,
+              url: "https://www.instagram.com/meditechlab01?igsh=ZW96b3M2eHV0cG82",
+            },
+            {
+              icon: FaLinkedinIn,
+              url: "https://www.linkedin.com/company/meditech-lab/",
+            },
+          ].map(({ icon: Icon, url }, i) => (
+            <a
+              key={i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black/70 hover:bg-blue-600 text-white p-3 rounded-full text-xl transition"
+            >
+              <Icon />
+            </a>
+          ))}
         </div>
       </div>
     </div>
