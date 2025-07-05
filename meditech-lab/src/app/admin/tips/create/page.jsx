@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import FormInput from '../../components/FormInput';
+import FormInput from '../../../../components/admin/FormInput';
 
 export default function CreateTip() {
   const [form, setForm] = useState({
