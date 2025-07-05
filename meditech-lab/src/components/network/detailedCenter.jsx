@@ -9,25 +9,25 @@ const DetailedCenter = ({ center, branch }) => (
       
       <div className="flex-1 space-y-2">
          <div className="flex items-start gap-2">
-          <Building2 className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
-          <p className="text-blue-800 font-medium">{center.name}</p>
+          <Building2 className="w-4 h-4 text-black-800 mt-1 flex-shrink-0" />
+          <p className="text-black-800 font-medium">{center.name}</p>
         </div>
 
         <div className="flex items-start gap-2">
-          <MapPin className="w-4 h-4 text-blue-500 mt-1 flex-shrink-0" />
-          <p className="text-blue-800 font-medium">{center.address}</p>
+          <MapPin className="w-4 h-4 text-black-800 mt-1 flex-shrink-0" />
+          <p className="text-black-800 font-medium">{center.address}</p>
         </div>
         <div className="flex items-center gap-2">
-          <Phone className="w-4 h-4 text-blue-500 flex-shrink-0" />
-          <p className="text-blue-800">{center.phone}</p>
+          <Phone className="w-4 h-4 text-black-800 flex-shrink-0" />
+          <p className="text-black-800">{center.phone}</p>
         </div>
         <div className="flex items-center gap-2">
-          <Mail className="w-4 h-4 text-blue-500 flex-shrink-0" />
-          <p className="text-blue-800">{center.email}</p>
+          <Mail className="w-4 h-4 text-black-800 flex-shrink-0" />
+          <p className="text-black-800">{center.email}</p>
         </div>
          <div className="flex items-center gap-2">
-          <Clock className="w-4 h-4 text-blue-500 flex-shrink-0" />
-          <p className="text-blue-800">{center.hours}</p>
+          <Clock className="w-4 h-4 text-black-800 flex-shrink-0" />
+          <p className="text-black-800">{center.hours}</p>
         </div>
       </div>
     </div>

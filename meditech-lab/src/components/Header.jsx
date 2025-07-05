@@ -120,8 +120,8 @@ const Header = () => {
 
       {/* Mobile Menu - Slide in from right for better UX */}
       <div
-        className={`md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-white z-50 shadow-xl transform transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         onClick={closeMenu}
       ></div>
