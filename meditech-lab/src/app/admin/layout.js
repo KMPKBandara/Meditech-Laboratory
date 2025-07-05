@@ -1,5 +1,5 @@
 // src/app/admin/layout.js
-import Sidebar from "./Components/Sidebar"; // Corrected path to Components
+import Sidebar from "../../components/admin/Sidebar"; // Corrected path to Components
 import { getServerSession } from "next-auth"; // NEW: Import getServerSession
 import { authOptions } from "../api/auth/[...nextauth]/route"; // NEW: Import your auth options
 import { redirect } from "next/navigation"; // NEW: Import redirect for server-side redirection
