@@ -11,26 +11,26 @@ const MainBranches = () => {
     {
       name: "Balangoda",
       image: Balangoda,
-      address: "123 Main Street, Balangoda",
-      phone: "+94 77 123 4567",
+      address: "No:08, Kalthota Road, Balagahamula, Balangoda",
+      phone: "+94 45 2288388",
     },
     {
       name: "Rathnapura",
       image: Rathnapura,
-      address: "456 Hospital Road, Rathnapura",
-      phone: "+94 77 234 5678",
+      address: "No:344, Hospital Junction, Colombo Road, Rathnapura",
+      phone: "+94 45 222 6446",
     },
     {
       name: "Welimada",
       image: Welimada,
-      address: "789 Lab Avenue, Welimada",
-      phone: "+94 77 345 6789",
+      address: "No:789 Hill Street, Welimada",
+      phone: "+94 52 2245566",
     },
     {
       name: "Kalawana",
       image: Kalawana,
-      address: "101 Health Street, Kalawana",
-      phone: "+94 77 456 7890",
+      address: "Hospital Road, Kalawana",
+      phone: "+94 45 2255370",
     },
   ];
   return (

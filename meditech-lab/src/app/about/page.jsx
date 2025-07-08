@@ -1,28 +1,3 @@
-/*'use client';
-import React from "react";
-import BackgroundCarousel from "@/components/AboutUs/BackgroundCarousel";
-import AboutSection from "@/components/AboutUs/AboutSection";
-import MissionVision from "@/components/AboutUs/MissionVision";
-import DirectorCarousel from "@/components/AboutUs/DirectorCarousel";
-import BranchCarousel from "@/components/AboutUs/BranchCarousel";
-import SocialMedia from "@/components/AboutUs/SocialMedia";
-
-
-const AboutUs = () => {
-  return (
-    <div className="bg-white text-center">
-      <BackgroundCarousel />
-      <AboutSection />
-      <MissionVision />
-      <DirectorCarousel />
-      <BranchCarousel />
-      <SocialMedia />
-    </div>
-  );
-};
-
-export default AboutUs;
-*/
 "use client";
 import React from "react";
 
@@ -93,8 +68,8 @@ const AboutPage = () => {
 
   const achievements = [
     { number: "50,000+", label: "Tests Performed Monthly" },
-    { number: "25+", label: "Branch Locations" },
-    { number: "200+", label: "Qualified Staff" },
+    { number: "4", label: "Branch Locations" },
+    { number: "40+", label: "Collection Centers" },
     { number: "98.5%", label: "Accuracy Rate" },
   ];
 
@@ -180,31 +155,60 @@ const AboutPage = () => {
                 </h3>
                 <div className="space-y-4 text-gray-700 text-sm md:text-base">
                   <p>
-                    Founded in 2010 by a team of visionary healthcare
-                    professionals, MediTech Laboratory began with a simple yet
-                    powerful mission: to democratize access to high-quality
-                    diagnostic services across Sri Lanka. What started as a
-                    single laboratory in Colombo has evolved into the nation's
-                    most comprehensive diagnostic network.
+                    Meditech Laboratory Services was founded with the vision to
+                    provide accurate, timely, and affordable diagnostic services
+                    across Sri Lanka. Since 2008, we’ve grown from a single
+                    semi-automated lab to a network of advanced, fully automated
+                    laboratories and 40+ sample collection centers.
                   </p>
                   <p>
-                    Our commitment to excellence is reflected in our
-                    state-of-the-art facilities, equipped with the latest
-                    diagnostic technology including automated analyzers, digital
-                    imaging systems, and AI-powered diagnostic tools. We've
-                    consistently invested in technology upgrades to ensure our
-                    patients receive the most accurate and timely results.
+                    Our four major branches—Walimada, Kalawana, Balangoda, and
+                    Rathnapura—each reflect our commitment to technological
+                    excellence and accessibility. With integrated Laboratory
+                    Information Systems (LIS) and departments like Biochemistry
+                    and Hematology, we bring high-quality diagnostics to every
+                    corner of the island.
                   </p>
                   <p>
-                    Today, we serve over 50,000 patients monthly across our 25+
-                    branches, maintaining an industry-leading accuracy rate of
-                    98.5%. Our team of 200+ qualified professionals work
-                    tirelessly to uphold our standards of excellence.
+                    Through continuous upgrades like next-gen analyzers,
+                    barcoding systems, and AI-supported diagnostics, we reduce
+                    turnaround time while increasing accuracy.
+                  </p>
+                  <p>
+                    Our digital ecosystem, including online portals, mobile
+                    apps, smart notifications, and doctor dashboards, ensures
+                    seamless service delivery for both patients and clinicians.
                   </p>
                 </div>
               </div>
+
               <div className="space-y-4">
-                {milestones.map((milestone, index) => (
+                {[
+                  {
+                    year: "2008",
+                    title: "Walimada Branch",
+                    description:
+                      "Established as a semi-automated lab, upgraded to fully automated in 2014",
+                  },
+                  {
+                    year: "2010",
+                    title: "Kalawana & Balangoda Branches",
+                    description:
+                      "Started with semi-automation; now equipped with LIS and advanced systems",
+                  },
+                  {
+                    year: "2021",
+                    title: "Rathnapura Branch",
+                    description:
+                      "Launched with LIS and specialized departments like Biochemistry and Hematology",
+                  },
+                  {
+                    year: "2024",
+                    title: "40+ Sample Collection Centers",
+                    description:
+                      "Established across rural and urban regions for wide accessibility",
+                  },
+                ].map((milestone, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-100 rounded-full flex items-center justify-center">
                       <span className="text-gray-700 font-bold text-xs md:text-sm">
@@ -296,11 +300,11 @@ const AboutPage = () => {
                   </h3>
                 </div>
                 <p className="text-gray-700 text-sm md:text-base">
-                  To be the most trusted and innovative healthcare diagnostics
-                  provider in the region, setting new standards for accuracy,
-                  accessibility, and patient care while pioneering the
-                  integration of artificial intelligence and advanced technology
-                  in medical diagnostics.
+                  To be the most trusted and innovative diagnostic laboratory in
+                  the Sabaragamuwa Province, delivering accurate, timely, and
+                  affordable medical testing services that empower healthier
+                  communities and elevate the standard of healthcare through
+                  excellence, compassion, and technology.
                 </p>
               </div>
 
@@ -314,11 +318,12 @@ const AboutPage = () => {
                   </h3>
                 </div>
                 <p className="text-gray-700 text-sm md:text-base">
-                  To deliver accurate, affordable, and timely diagnostic
-                  services using cutting-edge medical technology, while
-                  maintaining the highest standards of patient care, ethical
-                  practices, and contributing to the advancement of healthcare
-                  accessibility for all communities across Sri Lanka.
+                  Our mission is to provide accurate, reliable, and timely
+                  diagnostic services using advanced technology and a highly
+                  skilled team. We are committed to supporting physicians and
+                  improving patient outcomes by maintaining the highest
+                  standards of quality, ethics, and care in every test we
+                  perform.
                 </p>
               </div>
             </div>

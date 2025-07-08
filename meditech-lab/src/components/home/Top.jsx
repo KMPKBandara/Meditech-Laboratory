@@ -56,22 +56,10 @@ const Top = () => {
           </h1>
 
           {/* Search Bar */}
-          <div className="relative w-full max-w-md">
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Search for test here"
-              className="w-full py-3 pl-5 pr-12 rounded-full bg-white/20 backdrop-blur-md text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 shadow-md"
-            />
-            <button
-              onClick={handleSearch}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-lg"
-            >
-              <FaSearch />
-            </button>
-          </div>
+          {/* Tagline */}
+          <p className="text-white/90 text-lg sm:text-xl md:text-2xl font-medium max-w-xl drop-shadow-sm">
+            Trusted Diagnostics, Accurate Results...!
+          </p>
         </div>
 
         {/* Image */}

@@ -262,7 +262,7 @@ const LabNetwork = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-blue-700">30+</p>
+                  <p className="text-4xl font-bold text-blue-700">40+</p>
                   <p className="font-medium text-gray-700">
                     Collection Centers
                   </p>
