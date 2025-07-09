@@ -191,10 +191,16 @@ const AboutPage = () => {
                       "Established as a semi-automated lab, upgraded to fully automated in 2014",
                   },
                   {
-                    year: "2010",
-                    title: "Kalawana & Balangoda Branches",
+                    year: "2009",
+                    title: "Balangoda Branch",
                     description:
-                      "Started with semi-automation; now equipped with LIS and advanced systems",
+                      "Started in 2009; now fully automated with LIS and digital reporting",
+                  },
+                  {
+                    year: "2010",
+                    title: "Kalawana Branch",
+                    description:
+                      "Launched as a semi-automated lab; upgraded to full automation in 2014",
                   },
                   {
                     year: "2021",
