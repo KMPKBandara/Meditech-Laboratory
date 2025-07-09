@@ -32,8 +32,11 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex space-x-4">
+              {/* Facebook */}
               <a
-                href="#"
+                href="https://www.facebook.com/share/1F1VQGzAWT/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300"
                 aria-label="Facebook"
               >
@@ -41,17 +44,25 @@ const Footer = () => {
                   <path d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z" />
                 </svg>
               </a>
+
+              {/* WhatsApp */}
               <a
-                href="#"
-                className="bg-blue-400 hover:bg-blue-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300"
-                aria-label="Twitter"
+                href="https://whatsapp.com/channel/0029Vb6N0fa3GJOvjfwpI421"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 hover:bg-green-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300"
+                aria-label="WhatsApp"
               >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M22.162 5.65593C21.3986 5.99362 20.589 6.2154 19.76 6.31393C20.6337 5.79136 21.2877 4.96894 21.6 3.99993C20.78 4.48793 19.881 4.82993 18.944 5.01493C18.3146 4.34151 17.4804 3.89489 16.5709 3.74451C15.6615 3.59413 14.7279 3.74842 13.9153 4.18338C13.1026 4.61834 12.4564 5.30961 12.0771 6.14972C11.6978 6.98983 11.6067 7.93171 11.818 8.82893C10.1551 8.74558 8.52863 8.31345 7.04358 7.56059C5.55854 6.80773 4.24842 5.75098 3.198 4.45893C2.82629 5.09738 2.63095 5.82315 2.632 6.56193C2.632 8.01193 3.37 9.29293 4.492 10.0429C3.82801 10.022 3.17863 9.84271 2.598 9.51993V9.57193C2.5982 10.5376 2.93153 11.4735 3.54414 12.221C4.15675 12.9684 5.00647 13.4814 5.953 13.6729C5.33661 13.84 4.69039 13.8646 4.063 13.7449C4.32987 14.5762 4.85001 15.3031 5.55059 15.824C6.25118 16.345 7.09712 16.6337 7.97 16.6499C7.10248 17.3313 6.10918 17.8349 5.04687 18.1321C3.98457 18.4293 2.87412 18.5142 1.779 18.3819C3.6907 19.6114 5.91609 20.264 8.189 20.2619C15.882 20.2619 20.089 13.8889 20.089 8.36193C20.089 8.18193 20.084 7.99993 20.076 7.82193C20.8949 7.2301 21.6016 6.49695 22.163 5.65693L22.162 5.65593Z" />
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 32 32">
+                  <path d="M16.001 2.001a13.953 13.953 0 0 0-12.294 20.773L2.04 29.96l7.464-1.628a13.953 13.953 0 1 0 6.497-26.331zm7.917 19.694c-.33.928-1.919 1.823-2.652 1.941-.675.112-1.517.158-2.443-.156-.563-.185-1.285-.42-2.214-.823-3.896-1.695-6.44-5.548-6.635-5.799-.194-.253-1.59-2.113-1.59-4.03s1.008-2.859 1.366-3.246c.358-.386.779-.483 1.039-.483.261 0 .52.003.747.014.24.012.561-.09.877.67.33.785 1.12 2.715 1.22 2.911.098.197.164.435.032.697-.13.263-.195.426-.388.651-.194.226-.41.504-.584.677-.194.193-.397.404-.17.794.226.389 1.003 1.651 2.152 2.682 1.482 1.309 2.734 1.714 3.133 1.907.4.193.63.161.865-.097.236-.258 1.02-1.187 1.296-1.593.277-.406.525-.33.888-.193.363.135 2.303 1.086 2.702 1.284.399.197.663.293.76.455.098.162.098.937-.231 1.865z" />
                 </svg>
               </a>
+
+              {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/meditechlab01?igsh=ZW96b3M2eHV0cG82"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300"
                 aria-label="Instagram"
               >
@@ -59,8 +70,12 @@ const Footer = () => {
                   <path d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z" />
                 </svg>
               </a>
+
+              {/* LinkedIn */}
               <a
-                href="#"
+                href="https://www.linkedin.com/company/meditech-lab/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300"
                 aria-label="LinkedIn"
               >
@@ -110,20 +125,58 @@ const Footer = () => {
                   size={18}
                 />
                 <span className="text-gray-400">
-                  456 Rathnapura Road, Balangoda,
+                  No:08, Kalthota Road, Balagahamula, Balangoda
                   <br />
-                  Sri Lanka 70000
+                  Sri Lanka 70100
                 </span>
               </li>
-              <li className="flex items-center">
-                <Phone className="mr-3 text-blue-500 flex-shrink-0" size={18} />
-                <a
-                  href="tel:+94771234567"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
-                >
-                  +94 77 123 4567
-                </a>
+              <li className="flex items-start">
+                <Phone
+                  className="mr-3 text-blue-500 flex-shrink-0 mt-1"
+                  size={18}
+                />
+                <div className="text-gray-400 space-y-1">
+                  <div>
+                    <span className="font-semibold text-white">Balangoda:</span>{" "}
+                    <a
+                      href="tel:+94452288388"
+                      className="hover:text-blue-400 transition-colors duration-300"
+                    >
+                      045 2288388
+                    </a>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-white">
+                      Rathnapura:
+                    </span>{" "}
+                    <a
+                      href="tel:+94552224626"
+                      className="hover:text-blue-400 transition-colors duration-300"
+                    >
+                      045 222 6446
+                    </a>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-white">Welimada:</span>{" "}
+                    <a
+                      href="tel:+94552224018"
+                      className="hover:text-blue-400 transition-colors duration-300"
+                    >
+                      052 2245566
+                    </a>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-white">Kalawana:</span>{" "}
+                    <a
+                      href="tel:+94572227278"
+                      className="hover:text-blue-400 transition-colors duration-300"
+                    >
+                      045 2255370
+                    </a>
+                  </div>
+                </div>
               </li>
+
               <li className="flex items-center">
                 <Mail className="mr-3 text-blue-500 flex-shrink-0" size={18} />
                 <a
@@ -132,17 +185,6 @@ const Footer = () => {
                 >
                   meditechlabinfo@gmail.com
                 </a>
-              </li>
-              <li className="flex items-start">
-                <Clock
-                  className="mr-3 text-blue-500 flex-shrink-0 mt-1"
-                  size={18}
-                />
-                <div className="text-gray-400">
-                  <p>Monday - Friday: 7:00 AM - 8:00 PM</p>
-                  <p>Saturday: 7:00 AM - 6:00 PM</p>
-                  <p>Sunday: 8:00 AM - 2:00 PM</p>
-                </div>
               </li>
             </ul>
           </div>
@@ -153,12 +195,19 @@ const Footer = () => {
             <div className="grid grid-cols-1 gap-4">
               {[
                 {
-                  name: "Main Branch - Balangoda",
-                  address: "456 Rathnapura Road",
+                  name: "Balangoda Main Branch",
+                  address: "No:08, Kalthota Road, Balagahamula, Balangoda",
                 },
-                { name: "Rathnapura Branch", address: "78 Hospital Road" },
-                { name: "Welimada Branch", address: "23 Main Street" },
-                { name: "Kalawana Branch", address: "45 Deniyaya Road" },
+                {
+                  name: "Rathnapura Branch",
+                  address:
+                    "No:344, Hospital Junction, Colombo Road, Rathnapura",
+                },
+                {
+                  name: "Welimada Branch",
+                  address: "No:789 Hill Street, Welimada",
+                },
+                { name: "Kalawana Branch", address: "Hospital Road, Kalawana" },
               ].map((branch, index) => (
                 <div
                   key={index}
@@ -205,35 +254,9 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex justify-center items-center text-center">
             <div className="text-sm text-gray-500 mb-4 md:mb-0">
               © {currentYear} Meditech Laboratory. All rights reserved.
-            </div>
-            <div className="flex flex-wrap justify-center space-x-4 text-sm text-gray-500">
-              <a
-                href="/privacy"
-                className="hover:text-blue-400 transition-colors duration-300 mb-2 md:mb-0"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="hover:text-blue-400 transition-colors duration-300 mb-2 md:mb-0"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="/faq"
-                className="hover:text-blue-400 transition-colors duration-300 mb-2 md:mb-0"
-              >
-                FAQ
-              </a>
-              <a
-                href="/sitemap"
-                className="hover:text-blue-400 transition-colors duration-300"
-              >
-                Sitemap
-              </a>
             </div>
           </div>
         </div>

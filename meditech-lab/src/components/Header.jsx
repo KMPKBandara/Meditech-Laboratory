@@ -119,52 +119,56 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu - Slide in from right for better UX */}
+      {/* Mobile Menu Overlay */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-full bg-white z-50 shadow-xl transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        onClick={closeMenu}
-      ></div>
-      <div
-        className={`md:hidden fixed top-0 right-0 w-3/4 max-w-xs h-full bg-white z-50 shadow-xl transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-end p-4">
-          <button
-            className="text-2xl text-gray-600"
-            onClick={closeMenu}
-            aria-label="Close Menu"
-          >
-            <HiX />
-          </button>
+        <div className="flex flex-col h-full justify-between p-6">
+          {/* Close button */}
+          <div className="flex justify-end">
+            <button
+              className="text-3xl text-gray-600"
+              onClick={closeMenu}
+              aria-label="Close Menu"
+            >
+              <HiX />
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col items-center space-y-6 text-lg font-medium">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={`px-3 py-2 transition-colors duration-200 ${
+                    isActive
+                      ? "text-blue-700 font-semibold"
+                      : "text-gray-800 hover:text-blue-600"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Contact Us Button */}
+          <div className="flex justify-center mt-8">
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 shadow-md"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
-        <nav className="flex flex-col px-4 py-2 space-y-3">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className={`block px-3 py-2 border-b border-gray-100 ${
-                  isActive
-                    ? "text-blue-700 font-semibold border-blue-500"
-                    : "text-gray-800 hover:text-blue-600"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-          <Link
-            href="/contact"
-            onClick={closeMenu}
-            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 flex justify-center"
-          >
-            Contact Us
-          </Link>
-        </nav>
       </div>
     </header>
   );

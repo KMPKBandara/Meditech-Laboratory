@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
-    branch: "",
-    testType: "",
     message: "",
   });
 
@@ -17,29 +17,29 @@ const ContactPage = () => {
   const branches = [
     {
       name: "Balangoda Branch",
-      address: "45 Main Street, Balangoda 70100",
-      phone: "+94 45 228 7456",
+      address: "No:08, Kalthota Road, Balagahamula, Balangoda",
+      phone: "+94 45 2288388",
       email: "balangoda@meditechlab.com",
       hours: "Mon - Sat: 7:00 AM - 7:00 PM",
     },
     {
       name: "Rathnapura Branch",
-      address: "78 Hospital Road, Rathnapura 70000",
-      phone: "+94 45 222 3891",
+      address: "No:344, Hospital Junction, Colombo Road, Rathnapura",
+      phone: "+94 45 222 6446",
       email: "rathnapura@meditechlab.com",
       hours: "Mon - Sat: 6:30 AM - 8:00 PM",
     },
     {
       name: "Welimada Branch",
-      address: "12 Central Avenue, Welimada 90200",
-      phone: "+94 57 225 6742",
+      address: "No:789 Hill Street, Welimada",
+      phone: "+94 52 2245566",
       email: "welimada@meditechlab.com",
       hours: "Mon - Fri: 7:30 AM - 6:30 PM",
     },
     {
       name: "Kalawana Branch",
-      address: "33 Buddhist Road, Kalawana 70150",
-      phone: "+94 47 228 5634",
+      address: "Hospital Road, Kalawana",
+      phone: "+94 45 2255370",
       email: "kalawana@meditechlab.com",
       hours: "Mon - Sat: 7:00 AM - 7:30 PM",
     },
@@ -53,7 +53,7 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = async () => {
+  /*const handleSubmit = async () => {
     setIsSubmitting(true);
 
     // Simulate form submission
@@ -71,6 +71,43 @@ const ContactPage = () => {
 
       setTimeout(() => setSubmitStatus(""), 3000);
     }, 1500);
+  };
+  */
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+
+    const templateParams = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    try {
+      const response = await emailjs.send(
+        "service_u89so1g",
+        "template_eanxzy1",
+        templateParams,
+        "icEWsWHncreoq91Fd"
+      );
+
+      console.log("SUCCESS!", response.status, response.text);
+      setSubmitStatus("success");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setTimeout(() => setSubmitStatus(""), 3000);
+    } catch (error) {
+      console.error("FAILED...", error);
+      setSubmitStatus("error");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -116,10 +153,6 @@ const ContactPage = () => {
                       {branch.email}
                     </span>
                   </div>
-                  <div className="flex items-center">
-                    <span className="text-blue-600 mr-2">🕒</span>
-                    <span className="text-gray-700">{branch.hours}</span>
-                  </div>
                 </div>
               </div>
             ))}
@@ -130,7 +163,7 @@ const ContactPage = () => {
           {/* Contact Form */}
           <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
-              Book a Test or Inquiry
+              Contact Us
             </h2>
 
             {submitStatus === "success" && (
@@ -144,20 +177,39 @@ const ContactPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
-                    htmlFor="name"
+                    htmlFor="firstName"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Full Name *
+                    First Name *
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                    placeholder="Your full name"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="First Name"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Last Name"
                   />
                 </div>
 
@@ -200,55 +252,6 @@ const ContactPage = () => {
                     placeholder="+94 XX XXX XXXX"
                   />
                 </div>
-
-                <div>
-                  <label
-                    htmlFor="branch"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Preferred Branch *
-                  </label>
-                  <select
-                    id="branch"
-                    name="branch"
-                    value={formData.branch}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  >
-                    <option value="">Select a branch</option>
-                    <option value="Balangoda">Balangoda</option>
-                    <option value="Rathnapura">Rathnapura</option>
-                    <option value="Welimada">Welimada</option>
-                    <option value="Kalawana">Kalawana</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="testType"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Test Type/Service
-                </label>
-                <select
-                  id="testType"
-                  name="testType"
-                  value={formData.testType}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                >
-                  <option value="">Select test type</option>
-                  <option value="Blood Tests">Blood Tests</option>
-                  <option value="Urine Analysis">Urine Analysis</option>
-                  <option value="X-Ray">X-Ray</option>
-                  <option value="ECG">ECG</option>
-                  <option value="Health Checkup">
-                    Complete Health Checkup
-                  </option>
-                  <option value="Other">Other</option>
-                </select>
               </div>
 
               <div>
@@ -323,9 +326,9 @@ const ContactPage = () => {
                       Head Office
                     </h3>
                     <p className="text-gray-700">
-                      123 Meditech Street
+                      No:08, Kalthota Road,
                       <br />
-                      Cityville, State 12345
+                      Balagahamula, Balangoda
                     </p>
                   </div>
                 </div>
@@ -338,7 +341,7 @@ const ContactPage = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       Main Hotline
                     </h3>
-                    <p className="text-gray-700">+94 11 234 5678</p>
+                    <p className="text-gray-700">Balangoda : +94 45 2288388</p>
                     <p className="text-sm text-gray-600">
                       24/7 Emergency Support
                     </p>
@@ -353,7 +356,7 @@ const ContactPage = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">
                       Email Support
                     </h3>
-                    <p className="text-gray-700">support@meditechlab.com</p>
+                    <p className="text-gray-700">meditechlabinfo@gmail.com</p>
                     <p className="text-sm text-gray-600">
                       Response within 24 hours
                     </p>
