@@ -14,7 +14,7 @@ export default function Sidebar() {
     <aside className="w-64 h-screen bg-gray-100 p-6 shadow-md">
       <nav>
         <ul className="space-y-4">
-          <li><Link href="/admin/tests/categories">Add Test Category</Link></li>
+          <li><Link href="/admin/test-categories/create">Add Test Category</Link></li>
           <li><Link href="/admin/tests/create">Add Test</Link></li>
           <li><Link href="/admin/branches/create">Add Branch</Link></li>
           <li><Link href="/admin/collection-centers/create">Add Collection Center</Link></li>
