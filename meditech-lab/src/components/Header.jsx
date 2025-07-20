@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
-import logo from "../../public/header/logo.jpeg";
+import logo from "../../public/header/mediLab.jpg";
 import bgImg from "../../public/header/header-bg.png";
 
 const navLinks = [
@@ -14,7 +14,7 @@ const navLinks = [
   { label: "Tests", href: "/tests" },
   { label: "Laboratory Network", href: "/network" },
   { label: "About Us", href: "/about" },
-  { label: "Download Report", href: "/download-report" },
+  //{ label: "Download Report", href: "/download-report" },
 ];
 
 const Header = () => {
@@ -48,7 +48,7 @@ const Header = () => {
         scrolled ? "py-1 bg-white/95 backdrop-blur-sm" : "py-3 bg-white/85"
       }`}
       style={{
-        backgroundImage: `url(${bgImg.src})`,
+        //backgroundImage: `url(${bgImg.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

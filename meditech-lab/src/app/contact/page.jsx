@@ -53,26 +53,6 @@ const ContactPage = () => {
     }));
   };
 
-  /*const handleSubmit = async () => {
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitStatus("success");
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        branch: "",
-        testType: "",
-        message: "",
-      });
-
-      setTimeout(() => setSubmitStatus(""), 3000);
-    }, 1500);
-  };
-  */
   const handleSubmit = async () => {
     setIsSubmitting(true);
 

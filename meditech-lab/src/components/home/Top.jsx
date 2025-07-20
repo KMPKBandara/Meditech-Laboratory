@@ -52,7 +52,7 @@ const Top = () => {
         <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4 space-y-6">
           {/* Heading */}
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold drop-shadow-lg select-none">
-            MediTech Laboratory
+            MEDITECH LABORATORY
           </h1>
 
           {/* Search Bar */}
