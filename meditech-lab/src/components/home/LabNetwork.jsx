@@ -2,11 +2,7 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Balangoda from "../../assets/images/home/Balangoda.jpg";
-import Rathnapura from "../../assets/images/home/Rathnapura.jpg";
-import Welimada from "../../assets/images/home/Welimada.jpg";
-import Kalawana from "../../assets/images/home/Kalawana.jpg";
-import Lab from "../../assets/images/home/Lab-Technician.png";
+import Lab from "../../assets/images/home/LabTec.jpeg";
 import MainBranches from "./MainBranches";
 
 const LabNetwork = () => {

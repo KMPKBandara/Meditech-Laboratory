@@ -2,366 +2,217 @@
 import React from "react";
 
 const AboutPage = () => {
-  const directors = [
-    {
-      name: "Dr. Nimal Perera",
-      position: "Chairman & CEO",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-      qualification: "MBBS, MD, PhD",
-      experience: "25+ years",
-    },
-    {
-      name: "Dr. Sanduni Fernando",
-      position: "Chief Medical Officer",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      qualification: "MBBS, MS, FCPS",
-      experience: "20+ years",
-    },
-    {
-      name: "Mr. Mahesh Wijesinghe",
-      position: "Director of Operations",
-      image: "https://randomuser.me/api/portraits/men/45.jpg",
-      qualification: "MBA, BSc Engineering",
-      experience: "18+ years",
-    },
-    {
-      name: "Ms. Tharushi Jayawardena",
-      position: "Director of Finance",
-      image: "https://randomuser.me/api/portraits/women/48.jpg",
-      qualification: "CFA, ACCA, MBA",
-      experience: "15+ years",
-    },
-  ];
-
   const milestones = [
     {
+      year: "2008",
+      title: "Walimada Branch",
+      description:
+        "Established as a semi-automated lab, upgraded to fully automated in 2014",
+    },
+    {
+      year: "2009",
+      title: "Balangoda Branch",
+      description:
+        "Started in 2009; now fully automated with LIS and digital reporting",
+    },
+    {
       year: "2010",
-      title: "Foundation",
-      description: "Established first laboratory in Colombo",
+      title: "Kalawana Branch",
+      description:
+        "Launched as a semi-automated lab; upgraded to full automation in 2014",
     },
     {
-      year: "2013",
-      title: "Expansion",
-      description: "Opened 5 branches across Western Province",
-    },
-    {
-      year: "2016",
-      title: "Technology Upgrade",
-      description: "Introduced automated testing systems",
-    },
-    {
-      year: "2019",
-      title: "Digital Innovation",
-      description: "Launched online reporting system",
-    },
-    {
-      year: "2022",
-      title: "ISO Certification",
-      description: "Achieved ISO 15189 accreditation",
+      year: "2021",
+      title: "Rathnapura Branch",
+      description:
+        "Launched with LIS and specialized departments like Biochemistry and Hematology",
     },
     {
       year: "2024",
-      title: "AI Integration",
-      description: "Implemented AI-assisted diagnostics",
-    },
-  ];
-
-  const achievements = [
-    { number: "50,000+", label: "Tests Performed Monthly" },
-    { number: "4", label: "Branch Locations" },
-    { number: "40+", label: "Collection Centers" },
-    { number: "98.5%", label: "Accuracy Rate" },
-  ];
-
-  const values = [
-    {
-      title: "Excellence",
-      icon: "⭐",
-      description: "Uncompromising quality in every test and service",
-    },
-    {
-      title: "Innovation",
-      icon: "🚀",
-      description: "Embracing cutting-edge technology and methods",
-    },
-    {
-      title: "Integrity",
-      icon: "🛡️",
-      description: "Ethical practices and transparent operations",
-    },
-    {
-      title: "Compassion",
-      icon: "❤️",
-      description: "Caring for patients with empathy and respect",
+      title: "40+ Sample Collection Centers",
+      description:
+        "Established across rural and urban regions for wide accessibility",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
       {/* Header */}
-      <div className="bg-white py-10 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
             About MediTech Laboratory
           </h1>
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-            With a commitment to excellence in diagnostics, MediTech Laboratory
-            provides high-quality, affordable medical testing services. Our
-            vision is to make healthcare accessible and trustworthy through
-            advanced technology and compassionate care.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Excellence in diagnostic services since 2008, serving communities
+            across Sri Lanka
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Achievement Stats */}
-      <div className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition duration-300"
-              >
-                <div className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                  {achievement.number}
+      {/* Vision & Mission Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-8">
+            Our Vision & Mission
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600 hover:shadow-lg transition-shadow duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white text-xl">👁️</span>
                 </div>
-                <div className="text-gray-600 text-sm md:text-base font-medium">
-                  {achievement.label}
-                </div>
+                <h3 className="text-xl font-bold text-blue-800">Vision</h3>
               </div>
-            ))}
+              <p className="text-gray-700">
+                To be the most trusted and innovative diagnostic laboratory in
+                the Sabaragamuwa Province, delivering accurate, timely, and
+                affordable medical testing services that empower healthier
+                communities and elevate the standard of healthcare through
+                excellence, compassion, and technology.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600 hover:shadow-lg transition-shadow duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white text-xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-bold text-blue-800">Mission</h3>
+              </div>
+              <p className="text-gray-700">
+                Our mission is to provide accurate, reliable, and timely
+                diagnostic services using advanced technology and a highly
+                skilled team. We are committed to supporting physicians and
+                improving patient outcomes by maintaining the highest standards
+                of quality, ethics, and care in every test we perform.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Our Journey Section */}
-      <div className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Our Journey of Excellence
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              From humble beginnings to becoming Sri Lanka's most trusted
-              diagnostic laboratory network
-            </p>
-          </div>
+      <section className="py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-8">
+            Our Journey of Excellence
+          </h2>
 
-          <div className="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
-                  Building Trust Through Innovation
-                </h3>
-                <div className="space-y-4 text-gray-700 text-sm md:text-base">
-                  <p>
-                    Meditech Laboratory Services was founded with the vision to
-                    provide accurate, timely, and affordable diagnostic services
-                    across Sri Lanka. Since 2008, we’ve grown from a single
-                    semi-automated lab to a network of advanced, fully automated
-                    laboratories and 40+ sample collection centers.
-                  </p>
-                  <p>
-                    Our four major branches—Walimada, Kalawana, Balangoda, and
-                    Rathnapura—each reflect our commitment to technological
-                    excellence and accessibility. With integrated Laboratory
-                    Information Systems (LIS) and departments like Biochemistry
-                    and Hematology, we bring high-quality diagnostics to every
-                    corner of the island.
-                  </p>
-                  <p>
-                    Through continuous upgrades like next-gen analyzers,
-                    barcoding systems, and AI-supported diagnostics, we reduce
-                    turnaround time while increasing accuracy.
-                  </p>
-                  <p>
-                    Our digital ecosystem, including online portals, mobile
-                    apps, smart notifications, and doctor dashboards, ensures
-                    seamless service delivery for both patients and clinicians.
-                  </p>
-                </div>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Left Content */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold text-blue-800 mb-6">
+                Building Trust Through Innovation
+              </h3>
+              <div className="space-y-4 text-gray-700">
+                <p className="flex items-start">
+                  <span className="text-blue-600 font-bold mr-2">✓</span>
+                  Meditech Laboratory Services was founded with the vision to
+                  provide accurate, timely, and affordable diagnostic services
+                  across Sri Lanka since 2008.
+                </p>
+                <p className="flex items-start">
+                  <span className="text-blue-600 font-bold mr-2">✓</span>
+                  We've grown from a single semi-automated lab to a network of
+                  advanced, fully automated laboratories and 40+ sample
+                  collection centers.
+                </p>
+                <p className="flex items-start">
+                  <span className="text-blue-600 font-bold mr-2">✓</span>
+                  Our four major branches - Walimada, Kalawana, Balangoda, and
+                  Rathnapura - reflect our commitment to technological
+                  excellence and accessibility.
+                </p>
+                <p className="flex items-start">
+                  <span className="text-blue-600 font-bold mr-2">✓</span>
+                  Through continuous upgrades like next-gen analyzers, barcoding
+                  systems, and AI-supported diagnostics, we reduce turnaround
+                  time while increasing accuracy.
+                </p>
+                <p className="flex items-start">
+                  <span className="text-blue-600 font-bold mr-2">✓</span>
+                  Our digital ecosystem ensures seamless service delivery for
+                  both patients and clinicians through online portals and mobile
+                  apps.
+                </p>
               </div>
+            </div>
 
-              <div className="space-y-4">
-                {[
-                  {
-                    year: "2008",
-                    title: "Walimada Branch",
-                    description:
-                      "Established as a semi-automated lab, upgraded to fully automated in 2014",
-                  },
-                  {
-                    year: "2009",
-                    title: "Balangoda Branch",
-                    description:
-                      "Started in 2009; now fully automated with LIS and digital reporting",
-                  },
-                  {
-                    year: "2010",
-                    title: "Kalawana Branch",
-                    description:
-                      "Launched as a semi-automated lab; upgraded to full automation in 2014",
-                  },
-                  {
-                    year: "2021",
-                    title: "Rathnapura Branch",
-                    description:
-                      "Launched with LIS and specialized departments like Biochemistry and Hematology",
-                  },
-                  {
-                    year: "2024",
-                    title: "40+ Sample Collection Centers",
-                    description:
-                      "Established across rural and urban regions for wide accessibility",
-                  },
-                ].map((milestone, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gray-100 rounded-full flex items-center justify-center">
-                      <span className="text-gray-700 font-bold text-xs md:text-sm">
+            {/* Right Milestones */}
+            <div className="space-y-6">
+              {milestones.map((milestone, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-600 hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-white font-bold text-sm">
                         {milestone.year}
                       </span>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 text-sm md:text-base mb-1">
+                      <h4 className="font-bold text-blue-800 mb-2">
                         {milestone.title}
                       </h4>
-                      <p className="text-gray-600 text-xs md:text-sm">
+                      <p className="text-gray-700 text-sm">
                         {milestone.description}
                       </p>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Director Board Section */}
-      <div className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Our Director Board
-            </h2>
-            <p className="text-base md:text-lg text-gray-600">
-              Meet the distinguished professionals who guide our mission and
-              vision
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {directors.map((director, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition duration-300"
-              >
-                <div className="relative mb-4">
-                  <img
-                    src={director.image}
-                    alt={director.name}
-                    className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-4 border-gray-200"
-                  />
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white text-xs px-2 py-1 rounded-full">
-                    {director.experience}
-                  </div>
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1">
-                  {director.name}
-                </h3>
-                <p className="text-gray-600 font-medium text-sm mb-2">
-                  {director.position}
-                </p>
-                <p className="text-gray-500 text-xs">
-                  {director.qualification}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Vision & Mission Section */}
-      <div className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-white rounded-xl shadow-md p-6 md:p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Our Vision & Mission
-              </h2>
-              <p className="text-gray-600 text-base max-w-2xl mx-auto">
-                Driving the future of healthcare diagnostics through innovation
-                and excellence
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-xl p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white text-lg">👁️</span>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                    Vision
-                  </h3>
-                </div>
-                <p className="text-gray-700 text-sm md:text-base">
-                  To be the most trusted and innovative diagnostic laboratory in
-                  the Sabaragamuwa Province, delivering accurate, timely, and
-                  affordable medical testing services that empower healthier
-                  communities and elevate the standard of healthcare through
-                  excellence, compassion, and technology.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-white text-lg">⚡</span>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                    Mission
-                  </h3>
-                </div>
-                <p className="text-gray-700 text-sm md:text-base">
-                  Our mission is to provide accurate, reliable, and timely
-                  diagnostic services using advanced technology and a highly
-                  skilled team. We are committed to supporting physicians and
-                  improving patient outcomes by maintaining the highest
-                  standards of quality, ethics, and care in every test we
-                  perform.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
 
       {/* Values Section */}
-      <div className="py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Our Core Values
-            </h2>
-          </div>
+      <section className="py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-8">
+            Our Core Values
+          </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: "🎯",
+                title: "Accuracy",
+                description:
+                  "Precise and reliable test results with state-of-the-art equipment",
+              },
+              {
+                icon: "⚡",
+                title: "Speed",
+                description:
+                  "Quick turnaround times without compromising quality",
+              },
+              {
+                icon: "🤝",
+                title: "Trust",
+                description:
+                  "Building lasting relationships through consistent excellence",
+              },
+            ].map((value, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition duration-300"
+                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600 hover:shadow-lg transition-shadow duration-300 text-center"
               >
-                <div className="text-3xl mb-3">{value.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">{value.icon}</span>
+                </div>
+                <h3 className="text-xl font-bold text-blue-800 mb-2">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{value.description}</p>
+                <p className="text-gray-700">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

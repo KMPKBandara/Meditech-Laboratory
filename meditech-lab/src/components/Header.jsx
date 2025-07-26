@@ -15,6 +15,7 @@ const navLinks = [
   { label: "Laboratory Network", href: "/network" },
   { label: "About Us", href: "/about" },
   //{ label: "Download Report", href: "/download-report" },
+  { label: "Special Offers", href: "/offers" },
 ];
 
 const Header = () => {

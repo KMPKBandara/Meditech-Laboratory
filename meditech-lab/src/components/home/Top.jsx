@@ -77,7 +77,7 @@ const Top = () => {
           {[
             {
               icon: FaFacebookF,
-              url: "https://www.facebook.com/share/1F1VQGzAWT/",
+              url: "https://www.facebook.com/share/19uAnmVHso/",
             },
             {
               icon: FaWhatsapp,
