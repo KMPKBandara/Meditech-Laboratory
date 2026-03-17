@@ -44,17 +44,27 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header
-      className={`sticky top-0 z-50 shadow-sm transition-all duration-300 ${
-        scrolled ? "py-1 bg-white/95 backdrop-blur-sm" : "py-3 bg-white/85"
-      }`}
-      style={{
-        //backgroundImage: `url(${bgImg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="container mx-auto px-4">
+    // <header
+    //   className={`fixed top-0 left-0 w-full z-50 shadow-sm transition-all duration-300 ${
+    //     scrolled ? "py-1 bg-white/95 backdrop-blur-sm" : "py-3 bg-white/85"
+    //   }`}
+    //   style={{
+    //     //backgroundImage: `url(${bgImg.src})`,
+    //     backgroundSize: "cover",
+    //     backgroundPosition: "center",
+    //   }}
+    // >
+    
+<header
+  className={`fixed top-0 left-0 w-full z-[999] shadow-sm transition-all duration-300 
+  ${
+    scrolled
+      ? "py-1 bg-white-sm"
+      : "py-3 bg-white"
+  } 
+  bg-white md:bg-white`}
+>
+      <div className="max-w-7xl mx-auto px-8 sm:px-8 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo with better sizing */}
           <Link href="/" className="flex items-center">
@@ -121,11 +131,11 @@ const Header = () => {
 
       {/* Mobile Menu - Slide in from right for better UX */}
       {/* Mobile Menu Overlay */}
-      <div
-        className={`md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+     <div
+  className={`md:hidden fixed top-0 left-0 w-full h-full bg-white backdrop-blur-sm z-[999] transform transition-transform duration-300 ease-in-out ${
+    isOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
         <div className="flex flex-col h-full justify-between p-6">
           {/* Close button */}
           <div className="flex justify-end">
