@@ -1,7 +1,7 @@
 import { MapPin, Building2,  Star } from "lucide-react";
 const HeroSection = () => (
 
-  <div className="text-center mb-16 bg-white/80 shadow-lg rounded-[20px]">
+  <div className="text-center mt-15 mb-16 bg-white/80 shadow-lg rounded-[20px] py-30 px-6">
     <div className="inline-flex items-center gap-3 bg-white/80 px-6 py-3 rounded-full shadow-lg mb-6">
       <Building2 className="w-6 h-6 text-blue-600" />
       <span className="text-blue-800 font-semibold">Trusted Healthcare Network</span>
@@ -14,9 +14,9 @@ const HeroSection = () => (
       centers across Sri Lanka, delivering world-class diagnostic services with 
       cutting-edge technology and compassionate care.
     </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center py-6">
       <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
-        <MapPin className="w-5 h-5 text-blue-500" />
+        <MapPin className="w-5 h-5 text-blue-500 " />
         <span className="text-blue-700 font-medium">4 Branches • 40+ Centers</span>
       </div>
     </div>
