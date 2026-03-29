@@ -208,8 +208,8 @@ export default function ChatWidget() {
 
         {/* Mobile Help Banner */}
         {!open && hasNewMessage && isMobile && (
-          <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-lg p-2 whitespace-nowrap animate-fadeIn border border-gray-200">
-            <div className="text-xs text-gray-800 font-medium">
+          <div className="absolute bottom-16 right-1/2 sm:left-1/2 sm:-translate-x-1/2 transform bg-white rounded-lg shadow-lg p-2 whitespace-nowrap animate-fadeIn border border-gray-200 max-w-[90vw]">
+            <div className="text-xs text-gray-800 font-medium text-left md:text-center">
               Lab services help available
             </div>
             <div className="absolute bottom-0 left-1/2 transform translate-y-1/2 -translate-x-1/2 rotate-45 w-2 h-2 bg-white border-r border-b border-gray-200"></div>

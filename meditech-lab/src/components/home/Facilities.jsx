@@ -46,11 +46,11 @@ const FacilitySection = ({
   };
 
   return (
-    <div ref={ref} className="py-16 border-b border-gray-100">
+    <div ref={ref} className="py-10 sm:py-14 md:py-16 border-b border-gray-100">
       <div
         className={`flex flex-col ${
           imagePosition === "left" ? "md:flex-row" : "md:flex-row-reverse"
-        } gap-8 items-center`}
+        } gap-6 sm:gap-8 items-center`}
       >
         <motion.div
           className="w-full md:w-1/2"
@@ -58,13 +58,14 @@ const FacilitySection = ({
           animate={controls}
           variants={imageVariants}
         >
-          <div className="overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src={image}
-              alt={title}
-              className="w-full h-auto object-cover transition-transform hover:scale-105 duration-700"
-            />
-          </div>
+          <div className="relative w-full h-[220px] sm:h-[300px] md:h-[350px] overflow-hidden rounded-xl shadow-lg">
+  <Image
+    src={image}
+    alt={title}
+    fill
+    className="object-cover transition-transform hover:scale-105 duration-700"
+  />
+</div>
         </motion.div>
 
         <motion.div
@@ -185,7 +186,8 @@ const Facilities = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          {/* <div className="w-full md:w-1/2 min-w-0"> */}
+          <div className="bg-gradient-to-b from-white to-blue-50 overflow-x-hidden">
             <FacilitySection
               title="Advanced Automated Analyzers"
               description="Our laboratory is equipped with cutting-edge automated analyzers that deliver exceptional accuracy and rapid turnaround times. These state-of-the-art instruments utilize the latest technologies in clinical diagnostics, ensuring precise results for all test parameters."
