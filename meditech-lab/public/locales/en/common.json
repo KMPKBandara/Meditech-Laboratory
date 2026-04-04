@@ -1,0 +1,175 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "tests": "Tests",
+    "network": "Laboratory Network",
+    "about": "About Us",
+    "offers": "Special Offers",
+    "contact": "Contact"
+  },
+  "language": "Language",
+  "english": "English",
+  "sinhala": "Sinhala",
+  "home": {
+    "title": "MEDITECH LABORATORY",
+    "tagline": "Trusted Diagnostics, Accurate Results...!",
+    "searchPlaceholder": "Search for tests...",
+    "chooseUs": {
+      "title": "Why Choose MediTech Laboratory?",
+      "benefits": [
+        "State-of-the-art laboratory services with gold standard diagnostics",
+        "Most comprehensive test menu available in Sri Lanka",
+        "Multiple locations for convenient access",
+        "ISO certified with international quality control",
+        "Recognized by WHO & international research organizations"
+      ],
+      "description": "Excellence in Diagnostic Services"
+    },
+    "services": {
+      "title": "Our Comprehensive Services",
+      "description": "Comprehensive diagnostic services for your health needs",
+      "items": {
+        "routineTesting": {
+          "title": "Routine Testing",
+          "description": "Comprehensive blood, urine, and clinical sample analysis with rapid results."
+        },
+        "specializedDiagnostics": {
+          "title": "Specialized Diagnostics",
+          "description": "Advanced testing for hormones, allergies, and cancer markers with expert interpretation."
+        },
+        "homeSampleCollection": {
+          "title": "Home Sample Collection",
+          "description": "Professional sample collection at your doorstep with strict adherence to protocols."
+        },
+        "corporateHealthPackages": {
+          "title": "Corporate Health Packages",
+          "description": "Customized screening programs for organizations to maintain employee wellness."
+        },
+        "geneticTesting": {
+          "title": "Genetic Testing",
+          "description": "DNA analysis for hereditary conditions, carrier status, and personalized medicine."
+        }
+      }
+    },
+    "facilities": {
+      "title": "State-of-the-Art Facilities",
+      "description": "Our laboratory is equipped with the latest technology and staffed by highly trained professionals to ensure accurate, timely, and reliable diagnostic services.",
+
+      "1": {
+        "title": "Advanced Automated Analyzers",
+        "description": "Our laboratory is equipped with cutting-edge automated analyzers that deliver exceptional accuracy and rapid turnaround times. These state-of-the-art instruments utilize the latest technologies in clinical diagnostics, ensuring precise results for all test parameters.",
+        "features": [
+          "High-throughput processing capabilities for efficient workflow",
+          "Multi-parameter analysis with minimal sample volume requirements",
+          "Real-time monitoring and quality control systems",
+          "Interfaced with laboratory information systems for seamless data transfer"
+        ]
+      },
+      "2": {
+        "title": "24/7 Sample Handling Facility",
+        "description": "Our laboratory operates round-the-clock to accommodate urgent testing needs and ensure continuous service. With dedicated staff available at all hours, we process specimens promptly upon arrival, maintaining specimen integrity and delivering timely results when they matter most.",
+        "features": [
+          "Temperature-controlled specimen reception areas",
+          "Barcode tracking system for complete chain of custody",
+          "Multiple collection points throughout the region",
+          "Specialized transport systems for maintaining sample integrity"
+        ]
+      },
+      "3": {
+        "title": "Secure Report Delivery Systems",
+        "description": "Patient confidentiality and data security are paramount at our facility. We've implemented comprehensive digital solutions that enable quick access to test results while maintaining strict privacy controls. Our multi-channel reporting system adapts to your preferred communication method.",
+        "features": [
+          "Encrypted portal access with two-factor authentication",
+          "Automated notifications when results are available",
+          "Integration capabilities with electronic medical record systems",
+          "Customizable report formats for specialized clinical needs"
+        ]
+      }
+    },
+
+    "network": {
+      "title": "Our Laboratory Network",
+      "description": "Connecting patients with quality diagnostic services across Sri Lanka with state-of-the-art facilities and professional healthcare experts.",
+      "facilities": {
+        "title": "State-of-the-Art Facilities",
+        "description": "Our laboratories are equipped with the latest diagnostic technology, ensuring accurate and reliable test results for all our patients."
+      },
+      "professionals": {
+        "title": "Professional Healthcare Experts",
+        "description": "Our team consists of highly qualified medical technologists and healthcare professionals committed to delivering exceptional service."
+      },
+      "testRange": {
+        "title": "Comprehensive Test Range",
+        "description": "From routine blood work to specialized diagnostics, we offer a wide range of laboratory tests to meet all your healthcare needs."
+      },
+      "statistics": {
+        "mainBranches": {
+          "title": "Main Branches",
+          "description": "Strategically located across Sri Lanka to serve you better"
+        },
+        "collectionCenters": {
+          "title": "Collection Centers",
+          "description": "Convenient locations for sample collection and testing"
+        },
+        "islandWide": {
+          "title": "Island-wide Access",
+          "description": "Bringing quality healthcare to communities across Sri Lanka"
+        }
+      },
+      "ctaButton": "View Complete Laboratory Network"
+    },
+    "feedback": {
+      "title": "Patient Testimonials",
+      "description": "Discover why thousands of patients trust MediTech Labs for their diagnostic needs. Our commitment to excellence is reflected in our patients' experiences.",
+      "shareExperience": "Share Your Experience",
+      "hideForm": "Hide Feedback Form",
+      "form": {
+        "title": "Share Your Feedback",
+        "fullName": "Full Name *",
+        "position": "Position/Role",
+        "email": "Email (Optional)",
+        "rating": "Rating *",
+        "feedback": "Your Feedback *",
+        "namePlaceholder": "Enter your full name",
+        "positionPlaceholder": "e.g., Patient, Healthcare Professional",
+        "emailPlaceholder": "your.email@example.com",
+        "feedbackPlaceholder": "Share your experience with MediTech Labs...",
+        "ratingText": "Click to rate",
+        "starsText": "out of 5 stars",
+        "submitButton": "Submit Feedback",
+        "cancelButton": "Cancel"
+      },
+      "statsText": "Thank you to all",
+      "statsText2": "patients who shared their experiences with us!"
+    },
+    "mainBranche": {
+      "title": "Our Main Branches",
+      "description": "Our main branches are strategically located across Sri Lanka to provide convenient access to our high-quality diagnostic services. Each branch is equipped with state-of-the-art facilities and staffed by professional healthcare experts, ensuring that patients receive accurate and timely test results no matter where they are located.",
+      "branches": {
+        "colombo": {
+          "title": "Colombo",
+          "description": "Our flagship branch in Colombo offers a comprehensive range of diagnostic services with the latest technology and expert staff."
+        },
+        "kandy": {
+          "title": "Kandy",
+          "description": "Serving the central region, our Kandy branch provides high-quality laboratory testing with a focus on patient care."
+        },
+        "galle": {
+          "title": "Galle",
+          "description": "Our Galle branch delivers reliable diagnostic services to the southern region with state-of-the-art facilities."
+        },
+        "jaffna": {
+          "title": "Jaffna",
+          "description": "Catering to the northern region, our Jaffna branch offers comprehensive testing services with a commitment to excellence."
+        }
+      }
+    },
+    "feedbacks": {
+        "title": "Patient Testimonials",
+        "description": "Discover why thousands of patients trust MediTech Labs for their diagnostic needs. Our commitment to excellence is reflected in our patients' experiences.",
+        "shareExperience": "Share Your Experience",
+        "hideForm": "Hide Feedback Form"
+    }
+  }
+}

@@ -4,8 +4,11 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Lab from "../../assets/images/home/LabTec.jpeg";
 import MainBranches from "./MainBranches";
+import { useTranslation } from "react-i18next";
 
 const LabNetwork = () => {
+  const { t } = useTranslation();
+
   // Animation effect when elements come into view
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -105,13 +108,11 @@ const LabNetwork = () => {
             style={{ animation: "fadeInUp 0.6s ease-out forwards" }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
-              Our Laboratory Network
+              {t("home.network.title")}
             </h2>
             <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Connecting patients with quality diagnostic services across Sri
-              Lanka with state-of-the-art facilities and professional healthcare
-              experts.
+              {t("home.network.description")}
             </p>
           </div>
 
@@ -145,12 +146,10 @@ const LabNetwork = () => {
                   }}
                 >
                   <h3 className="text-xl font-bold text-blue-800 mb-2">
-                    State-of-the-Art Technology
+                    {t("home.network.facilities.title")}
                   </h3>
                   <p className="text-gray-600">
-                    Our laboratories are equipped with the latest diagnostic
-                    technology, ensuring accurate and reliable test results for
-                    all our patients.
+                    {t("home.network.facilities.description")}
                   </p>
                 </div>
 
@@ -162,12 +161,10 @@ const LabNetwork = () => {
                   }}
                 >
                   <h3 className="text-xl font-bold text-blue-800 mb-2">
-                    Expert Healthcare Professionals
+                    {t("home.network.professionals.title")}
                   </h3>
                   <p className="text-gray-600">
-                    Our team consists of highly qualified medical technologists
-                    and healthcare professionals committed to delivering
-                    exceptional service.
+                    {t("home.network.professionals.description")}
                   </p>
                 </div>
 
@@ -179,12 +176,10 @@ const LabNetwork = () => {
                   }}
                 >
                   <h3 className="text-xl font-bold text-blue-800 mb-2">
-                    Comprehensive Test Range
+                    {t("home.network.testRange.title")}
                   </h3>
                   <p className="text-gray-600">
-                    From routine blood work to specialized diagnostics, we offer
-                    a wide range of laboratory tests to meet all your healthcare
-                    needs.
+                    {t("home.network.testRange.description")}
                   </p>
                 </div>
               </div>
@@ -219,11 +214,11 @@ const LabNetwork = () => {
                 </div>
                 <div>
                   <p className="text-4xl font-bold text-blue-700">04</p>
-                  <p className="font-medium text-gray-700">Main Branches</p>
+                  <p className="font-medium text-gray-700">{t("home.network.statistics.mainBranches.title")}</p>
                 </div>
               </div>
               <p className="text-sm text-gray-600">
-                Strategically located across Sri Lanka to serve you better
+                {t("home.network.statistics.mainBranches.description")}
               </p>
             </div>
 
@@ -260,12 +255,12 @@ const LabNetwork = () => {
                 <div>
                   <p className="text-4xl font-bold text-blue-700">40+</p>
                   <p className="font-medium text-gray-700">
-                    Collection Centers
+                    {t("home.network.statistics.collectionCenters.title")}
                   </p>
                 </div>
               </div>
               <p className="text-sm text-gray-600">
-                Convenient locations for sample collection and testing
+                {t("home.network.statistics.collectionCenters.description")}
               </p>
             </div>
 
@@ -296,12 +291,12 @@ const LabNetwork = () => {
                 <div>
                   <p className="text-4xl font-bold text-blue-700">100+</p>
                   <p className="font-medium text-gray-700">
-                    Island-wide Access
+                    {t("home.network.statistics.islandWide.title")}
                   </p>
                 </div>
               </div>
               <p className="text-sm text-gray-600">
-                Bringing quality healthcare to communities across Sri Lanka
+                {t("home.network.statistics.islandWide.description")}
               </p>
             </div>
           </div>
@@ -318,7 +313,7 @@ const LabNetwork = () => {
           >
             <Link href="/network">
               <span className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 font-medium shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                View Complete Laboratory Network
+                {t("home.network.ctaButton")}
               </span>
             </Link>
           </div>

@@ -15,6 +15,7 @@ import Lab1 from "../../assets/images/home/Lab1.jpg";
 import Lab2 from "../../assets/images/home/Lab2.jpg";
 import Lab3 from "../../assets/images/home/Lab3.jpg";
 import Lab4 from "../../assets/images/home/Lab4.png";
+import { useTranslation } from "react-i18next";
 
 const images = [Lab1, Lab2, Lab3, Lab4];
 
@@ -22,6 +23,7 @@ const Top = () => {
   const [index, setIndex] = useState(0);
   const [search, setSearch] = useState("");
   const router = useRouter();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -52,13 +54,11 @@ const Top = () => {
         <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4 space-y-6">
           {/* Heading */}
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold drop-shadow-lg select-none">
-            MEDITECH LABORATORY
+            {t("home.title")}
           </h1>
-
-          {/* Search Bar */}
           {/* Tagline */}
           <p className="text-white/90 text-lg sm:text-xl md:text-2xl font-medium max-w-xl drop-shadow-sm">
-            Trusted Diagnostics, Accurate Results...!
+            {t("home.tagline")}
           </p>
         </div>
 

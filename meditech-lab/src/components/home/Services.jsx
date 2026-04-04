@@ -7,6 +7,7 @@ import RoutineTesting from "../../assets/images/home/Routine-Testing.jpg";
 import HomeSample from "../../assets/images/home/Home-Sample-Collection.jpg";
 import HealthPackages from "../../assets/images/home/Health-Packages.jpg";
 import GeneticTesting from "../../assets/images/home/Genetic-Testing.jpg";
+import { useTranslation } from "react-i18next";
 
 // Import Swiper components and styles
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,45 +17,43 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Services = () => {
+  // Get translation function first
+  const { t } = useTranslation();
+
   // Services data array with 6 services
   // Adding imagePath property for each service to easily update images later
   const services = [
     {
-      title: "Routine Testing",
-      description:
-        "Comprehensive blood, urine, and clinical sample analysis with rapid results.",
+      title: t("home.services.items.routineTesting.title"),
+      description: t("home.services.items.routineTesting.description"),
       icon: "🧪",
       imagePath: RoutineTesting, // Default image - can be easily replaced later
       imageAlt: "Routine testing laboratory equipment",
     },
     {
-      title: "Specialized Diagnostics",
-      description:
-        "Advanced testing for hormones, allergies, and cancer markers with expert interpretation.",
+      title: t("home.services.items.specializedDiagnostics.title"),
+      description: t("home.services.items.specializedDiagnostics.description"),
       icon: "🔬",
       imagePath: scientist, // Default image - can be easily replaced later
       imageAlt: "Specialized diagnostic equipment",
     },
     {
-      title: "Home Sample Collection",
-      description:
-        "Professional sample collection at your doorstep with strict adherence to protocols.",
+      title: t("home.services.items.homeSampleCollection.title"),
+      description: t("home.services.items.homeSampleCollection.description"),
       icon: "🏠",
       imagePath: HomeSample, // Default image - can be easily replaced later
       imageAlt: "Home sample collection service",
     },
     {
-      title: "Corporate Health Packages",
-      description:
-        "Customized screening programs for organizations to maintain employee wellness.",
+      title: t("home.services.items.corporateHealthPackages.title"),
+      description: t("home.services.items.corporateHealthPackages.description"),
       icon: "🏢",
       imagePath: HealthPackages, // Default image - can be easily replaced later
       imageAlt: "Corporate health services",
     },
     {
-      title: "Genetic Testing",
-      description:
-        "DNA analysis for hereditary conditions, carrier status, and personalized medicine.",
+      title: t("home.services.items.geneticTesting.title"),
+      description: t("home.services.items.geneticTesting.description"),
       icon: "🧬",
       imagePath: GeneticTesting, // Default image - can be easily replaced later
       imageAlt: "Genetic testing equipment",
@@ -84,7 +83,7 @@ const Services = () => {
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions
+      observerOptions,
     );
 
     if (titleRef.current) {
@@ -106,7 +105,9 @@ const Services = () => {
         .fade-up {
           opacity: 0;
           transform: translateY(20px);
-          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+          transition:
+            opacity 0.8s ease-out,
+            transform 0.8s ease-out;
         }
 
         .animate-in {
@@ -115,7 +116,9 @@ const Services = () => {
         }
 
         .service-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
           overflow: hidden;
           position: relative;
         }
@@ -170,7 +173,7 @@ const Services = () => {
           ref={titleRef}
           className="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-12 fade-up"
         >
-          Our Comprehensive Services
+          {t("home.services.title")}
         </h2>
 
         <div ref={swiperRef} className="fade-up">

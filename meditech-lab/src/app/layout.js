@@ -1,4 +1,5 @@
 // src/app/layout.js
+import "../i18n";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
