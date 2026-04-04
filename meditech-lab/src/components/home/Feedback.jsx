@@ -9,8 +9,10 @@ import {
   User,
 } from "lucide-react";
 import testimonials from "@/assets/data/feedback";
+import { useTranslation } from "react-i18next";
 
 const Feedback = () => {
+  const { t } = useTranslation();
   const [activeSlide, setActiveSlide] = useState(0);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -115,12 +117,10 @@ const Feedback = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-3">
-              Patient Testimonials
+              {t("home.feedbacks.title")}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
-              Discover why thousands of patients trust MediTech Labs for their
-              diagnostic needs. Our commitment to excellence is reflected in our
-              patients' experiences.
+              {t("home.feedbacks.description")}
             </p>
           </div>
 
@@ -131,7 +131,7 @@ const Feedback = () => {
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-md"
             >
               <MessageSquare className="mr-2" size={20} />
-              {showForm ? "Hide Feedback Form" : "Share Your Experience"}
+              {showForm ? t("home.feedbacks.hideForm") : t("home.feedbacks.shareExperience")}
             </button>
           </div>
 
@@ -139,7 +139,7 @@ const Feedback = () => {
           {showForm && (
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-12 max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">
-                Share Your Feedback
+                {t("home.feedbacks.shareExperience")}
               </h3>
 
               <div className="space-y-6">

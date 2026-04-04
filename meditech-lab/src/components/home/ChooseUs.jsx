@@ -2,21 +2,16 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import LabTec from "../../assets/images/home/Lab.jpg";
+import { useTranslation } from "react-i18next";
 
 const ChooseUs = () => {
   // Refs for animation elements
   const benefitRefs = useRef([]);
   const imageRef = useRef(null);
   const titleRef = useRef(null);
+  const { t } = useTranslation();
+  const benefits = t("home.chooseUs.benefits", { returnObjects: true });
 
-  // Compact version of the benefits list
-  const benefits = [
-    "State-of-the-art laboratory services with gold standard diagnostics",
-    "Most comprehensive test menu available in Sri Lanka",
-    "Multiple locations for convenient access",
-    "ISO certified with international quality control",
-    "Recognized by WHO & international research organizations",
-  ];
 
   useEffect(() => {
     // Setup Intersection Observer for animations
@@ -39,7 +34,7 @@ const ChooseUs = () => {
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions
+      observerOptions,
     );
 
     // Observe title
@@ -71,7 +66,9 @@ const ChooseUs = () => {
           .fade-up {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition:
+              opacity 0.6s ease-out,
+              transform 0.6s ease-out;
           }
 
           /* Animation triggered by IntersectionObserver */
@@ -102,27 +99,21 @@ const ChooseUs = () => {
           ref={titleRef}
           className="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-8 fade-up"
         >
-          Why Choose MediTech Laboratory?
+          {t("home.chooseUs.title")}
         </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Content Section - Will be on the left on desktop, top on mobile */}
-          <div className="w-full md:w-1/2 space-y-6">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                ref={(el) => (benefitRefs.current[index] = el)}
-                className={`bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-600 hover:shadow-lg transition-shadow duration-300 fade-up delay-${
-                  (index + 1) * 100
-                }`}
-              >
-                <p className="text-gray-700 flex items-start">
-                  <span className="text-blue-600 font-bold mr-2">✓</span>
-                  {benefit}
-                </p>
-              </div>
-            ))}
-          </div>
+          <div className="space-y-4">
+  {benefits.map((item, index) => (
+    <div key={index}>
+      <p className="text-gray-700 flex items-start">
+        <span className="text-blue-600 font-bold mr-2">✓</span>
+        {item}
+      </p>
+    </div>
+  ))}
+</div>
 
           {/* Image Section - Will be on the right on desktop, bottom on mobile */}
           <div className="w-full md:w-1/2 mt-6 md:mt-0">
@@ -139,7 +130,7 @@ const ChooseUs = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/70 to-transparent p-4">
                 <p className="text-white font-medium text-lg">
-                  Excellence in Diagnostic Services
+                  {t("home.chooseUs.description")}
                 </p>
               </div>
             </div>

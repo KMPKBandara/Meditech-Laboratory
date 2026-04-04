@@ -5,8 +5,10 @@ import Balangoda from "../../assets/images/home/Balangoda.jpg";
 import Rathnapura from "../../assets/images/home/Rathnapura.jpeg";
 import Welimada from "../../assets/images/home/Welimada.jpg";
 import Kalawana from "../../assets/images/home/Kalawana.jpg";
+import { useTranslation } from "react-i18next";
 
 const MainBranches = () => {
+  const { t } = useTranslation();
   const branches = [
     {
       name: "Balangoda",
@@ -40,7 +42,7 @@ const MainBranches = () => {
         className="text-2xl font-bold text-blue-800 mb-8 text-center animate-on-scroll"
         style={{ animation: "fadeInUp 0.6s ease-out forwards" }}
       >
-        Our Main Branches
+       {t("home.mainBranche.title")}
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
