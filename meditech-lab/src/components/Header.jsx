@@ -74,7 +74,7 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Right buttons */}
+        
         <div className="hidden md:flex items-center space-x-3 relative">
           {/* Language Toggle Button */}
           <button
