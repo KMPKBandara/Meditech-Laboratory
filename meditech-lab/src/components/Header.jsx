@@ -15,17 +15,13 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
   const [currentLang, setCurrentLang] = useState(i18n.language);
-  const [langOpen, setLangOpen] = useState(false); // dropdown state
 
   const toggleMobile = () => setMobileOpen(!mobileOpen);
   const closeMobile = () => setMobileOpen(false);
 
-  const toggleLangDropdown = () => setLangOpen(!langOpen);
-
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     setCurrentLang(lang);
-    setLangOpen(false);
   };
 
   const navLinks = [
@@ -80,31 +76,14 @@ const Header = () => {
 
         {/* Right buttons */}
         <div className="hidden md:flex items-center space-x-3 relative">
-          {/* Language Dropdown */}
-          <div className="relative">
-            <button
-              onClick={toggleLangDropdown}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-2 rounded-full text-sm font-medium transition-colors duration-300"
-            >
-              {currentLang === "en" ? "English" : "සිංහල"}
-            </button>
-            {langOpen && (
-              <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-300 rounded-md shadow-lg z-50">
-                <button
-                  onClick={() => changeLanguage("en")}
-                  className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
-                >
-                  English
-                </button>
-                <button
-                  onClick={() => changeLanguage("si")}
-                  className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
-                >
-                  සිංහල
-                </button>
-              </div>
-            )}
-          </div>
+          {/* Language Toggle Button */}
+          <button
+            onClick={() => changeLanguage(currentLang === "en" ? "si" : "en")}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-2 rounded-full text-sm font-medium transition-colors duration-300"
+          >
+            {/* {currentLang === "en" ? "English" : "සිංහල"} */}
+             {currentLang === "en" ? "සිංහල" : "English"}
+          </button>
 
           {/* Contact Button */}
           <Link
