@@ -81,7 +81,6 @@ const Header = () => {
             onClick={() => changeLanguage(currentLang === "en" ? "si" : "en")}
             className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-2 rounded-full text-sm font-medium transition-colors duration-300"
           >
-            {/* {currentLang === "en" ? "English" : "සිංහල"} */}
              {currentLang === "en" ? "සිංහල" : "English"}
           </button>
 
