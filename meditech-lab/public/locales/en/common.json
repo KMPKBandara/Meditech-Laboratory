@@ -45,7 +45,8 @@
         "corporateHealthPackages": {
           "title": "Corporate Health Packages",
           "description": "Customized screening programs for organizations to maintain employee wellness."
-        },
+        }
+        ,
         "geneticTesting": {
           "title": "Genetic Testing",
           "description": "DNA analysis for hereditary conditions, carrier status, and personalized medicine."

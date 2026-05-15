@@ -22,8 +22,8 @@ const ServicesPage = () => {
         "✓ Diabetes & Lipid Profile",
         "✓ Same-day digital reports",
       ],
-      duration: "4–6 hours",
-      pricing: "From Rs. 500",
+      duration: "1 – 4 hours",
+      pricing: "From Rs. 200",
     },
     {
       id: 2,
@@ -37,8 +37,8 @@ const ServicesPage = () => {
         "✓ Infectious & Autoimmune Panels",
         "✓ Expert result interpretation",
       ],
-      duration: "24–48 hours",
-      pricing: "From Rs. 2,500",
+      duration: "24 – 48 hours",
+      pricing: "From Rs. 2,000",
     },
     {
       id: 3,
@@ -52,8 +52,8 @@ const ServicesPage = () => {
         "✓ GPS-tracked visits",
         "✓ Flexible scheduling",
       ],
-      duration: "Same-day collection",
-      pricing: "Rs. 300 + test fees",
+      duration: "Same - day collection",
+      // pricing: "Rs. 300 + test fees",
     },
     {
       id: 4,
@@ -70,21 +70,21 @@ const ServicesPage = () => {
       duration: "Flexible",
       pricing: "Custom pricing",
     },
-    {
-      id: 5,
-      title: "Genetic Testing",
-      icon: "🧬",
-      image: GeneticTesting,
-      description: `Discover your genetic blueprint. Identify hereditary risks, optimize medication, and plan for personalized healthcare.`,
-      highlights: [
-        "✓ Disease Risk Screening",
-        "✓ Carrier & Paternity Testing",
-        "✓ Pharmacogenomics",
-        "✓ Genetic counseling",
-      ],
-      duration: "7–14 days",
-      pricing: "From Rs. 15,000",
-    },
+    // {
+    //   id: 5,
+    //   title: "Genetic Testing",
+    //   icon: "🧬",
+    //   image: GeneticTesting,
+    //   description: `Discover your genetic blueprint. Identify hereditary risks, optimize medication, and plan for personalized healthcare.`,
+    //   highlights: [
+    //     "✓ Disease Risk Screening",
+    //     "✓ Carrier & Paternity Testing",
+    //     "✓ Pharmacogenomics",
+    //     "✓ Genetic counseling",
+    //   ],
+    //   duration: "7 – 14 days",
+    //   pricing: "From Rs. 15,000",
+    // },
   ];
 
   return (

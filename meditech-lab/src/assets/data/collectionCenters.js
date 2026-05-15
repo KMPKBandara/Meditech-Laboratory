@@ -124,22 +124,22 @@ const branches = [
         phone: "071 551 5681",
         hours: "7 AM - 11 AM",
       },
+      // {
+      //   id: 2,
+      //   name: "Watapotha Collection Center",
+      //   address: "Watapotha Junction,Watapotha,Nivitigala.",
+      //   phone: "071 235 2689 / 076 215 4526",
+      //   hours: "7.45 AM - 5 PM",
+      // },
       {
         id: 2,
-        name: "Watapotha Collection Center",
-        address: "Watapotha Junction,Watapotha,Nivitigala.",
-        phone: "071 235 2689 / 076 215 4526",
-        hours: "7.45 AM - 5 PM",
-      },
-      {
-        id: 3,
         name: "Malwala Collection Center",
         address: "Medical Center,Badu waththa,Malwala,Rathnapura.",
         phone: " 076 662 8850 / 071 396 0362",
         hours: "7 AM - 10 AM (Poya day Closed)",
       },
       {
-        id: 4,
+        id: 3,
         name: "Sri palabaddala Collection Center",
         address:
           "In front of sri palabaddala PMCU, sri palabaddala,Rathnapura.",
@@ -147,35 +147,35 @@ const branches = [
         hours: "7 AM - 10 AM (Sunday & poya day closed.)",
       },
       {
-        id: 5,
+        id: 4,
         name: "Erathna Collection Center",
         address: "Gangabada,Erathna,Kuruwita,(Infront of New post office)",
         phone: "074 289 2481 / 070 169 9989",
         hours: "6.30 AM - 11 AM (Poya day Closed)",
       },
       {
-        id: 6,
+        id: 5,
         name: "Gilimale -Thannahena Collection Center",
         address: "Medical Center Thannahena,Gilimale,Rathnapura.",
         phone: "077 245 5566 / 071 807 8081",
         hours: "6.45 AM - 12 Noon (Poya day Closed)",
       },
       {
-        id: 7,
+        id: 6,
         name: "Gilimale Collection Center",
         address: " In front of Gilimale Hospital,Gilimale,Rathnapura.",
         phone: " 077 820 8324",
         hours: "6.45 AM - 4 PM (Poya day Closed)",
       },
       {
-        id: 8,
+        id: 7,
         name: "Welimaluwa Collection Center",
         address: "Medical center Welimaluwa,Rathnapura.",
         phone: "071 904 5733 / 071 895 6786",
         hours: "7 AM - 10 AM (Poya day Closed)",
       },
       {
-        id: 9,
+        id: 8,
         name: "Baanagoda Collection Center",
         address:
           "Medical center Near the Sub post office,Baanagoda, lellopitiya, Rathnapura ",
@@ -183,7 +183,7 @@ const branches = [
         hours: "7 AM - 10 AM (Sunday and poya day closed.)",
       },
       {
-        id: 10,
+        id: 9,
         name: "Paradise Collection Center",
         address:
           "In front of Vijaya kumarathunga Vidyalaya, paradise, kuruwita.",
@@ -191,7 +191,7 @@ const branches = [
         hours: "7 AM - 10 AM (poya day closed.)",
       },
       {
-        id: 11,
+        id: 10,
         name: "Hidellana Collection Center",
         address:
           "Near the weragoda temple, Medical center, Weragoda,Hidellana, Rathnapura.",
@@ -199,21 +199,21 @@ const branches = [
         hours: "7 AM - 10 AM (poya day closed.)",
       },
       {
-        id: 12,
+        id: 11,
         name: "Rathnapura Town Collection Center",
         address: "Medical center, Near the prasanna gems,Rathnapura.",
         phone: "071 155 6446",
         hours: "7 AM - 10 AM (poya day closed.)",
       },
       {
-        id: 13,
+        id: 12,
         name: "Ganegama Collection Center",
         address: "Ganegama Junction, Ganegama, pelmadulla.",
         phone: "077 177 5132 / 071 174 1770",
         hours: "7 AM - 10 AM (poya day closed.)",
       },
       {
-        id: 14,
+        id: 13,
         name: "Sannasgama Collection Center",
         address:
           "Medex Pharmacy & Medicare Medical Center,Sannasgama,pelmadulla.",
@@ -221,19 +221,26 @@ const branches = [
         hours: "7 AM - 4 PM",
       },
       {
-        id: 15,
+        id: 14,
         name: "Yakdehiwaththa Collection Center",
         address: "Medical center, Medical center, yakdehiwaththa, Nivitigala.",
         phone: "071 323 6301 / 077 883 3725",
         hours: "7 AM - 10 AM (Poya day closed)",
       },
+      // {
+      //   id: 16,
+      //   name: "Nivitigala Collection Center",
+      //   address: "Jayaruwan Medical Center,In front of BOC bank, Nivitigala.",
+      //   phone: "074 348 2651",
+      //   hours: "7 AM - 5 PM (Poya day closed)",
+      // },
       {
-        id: 16,
-        name: "Nivitigala Collection Center",
-        address: "Jayaruwan Medical Center,In front of BOC bank, Nivitigala.",
-        phone: "074 348 2651",
-        hours: "7 AM - 5 PM (Poya day closed)",
-      },
+        id: 15,
+        name: "Lellopitiya collection center ",
+        address: "Lellopitiya junction, lellopitiya, Rathnapura.",
+        phone: "077-8833725 / 071-1556446",
+        hours: "6.45 AM - 11 AM (Poya day closed)",
+      }
     ],
     mapQuery:
       "No.%20234%20Main%20Street,%20Rathnapura,%20Sri%20Lanka+(Meditech%20Laboratory%20Rathnapura)",
