@@ -22,7 +22,7 @@ const Tests = () => {
       category.tests.map((test) => ({
         ...test,
         category: category.title,
-      }))
+      })),
     );
   }, []);
 
@@ -52,14 +52,14 @@ const Tests = () => {
         (test) =>
           test.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           test.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          test.category?.toLowerCase().includes(searchTerm.toLowerCase())
+          test.category?.toLowerCase().includes(searchTerm.toLowerCase()),
       );
     }
 
     // Apply other filters
     if (filters.fasting !== "all") {
       tests = tests.filter((test) =>
-        filters.fasting === "required" ? test.fasting : !test.fasting
+        filters.fasting === "required" ? test.fasting : !test.fasting,
       );
     }
 
@@ -102,9 +102,12 @@ const Tests = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-30">
+    <div className="relative min-h-screen bg-gray-50 py-30">
       {/* Header Section */}
-      <div className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
+      <div
+        id="page-header"
+        className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40"
+      >
         <div className="container mx-auto px-4 py-3">
           <div className="max-w-7xl mx-auto">
             {/* Desktop Layout */}

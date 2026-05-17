@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const TestDetailsModal = ({ test, isOpen, onClose }) => {
-  // Handle escape key press
+  // Escape key + body scroll lock
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
+      if (e.key === "Escape") onClose();
     };
 
     if (isOpen) {
@@ -21,6 +19,20 @@ const TestDetailsModal = ({ test, isOpen, onClose }) => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose]);
+
+  const [headerOffset, setHeaderOffset] = useState(0);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const update = () => {
+      const header = document.getElementById("page-header");
+      const h = header ? header.offsetHeight : 0;
+      setHeaderOffset(h);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [isOpen]);
 
   if (!isOpen || !test) return null;
 
@@ -142,16 +154,26 @@ const TestDetailsModal = ({ test, isOpen, onClose }) => {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
-      {/* Backdrop */}
+    <div className="fixed inset-0 z-50">
+      {/* Backdrop below header */}
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+        className="fixed left-0 right-0 bg-black/10"
+        style={{ top: headerOffset, bottom: 0 }}
         onClick={onClose}
       />
 
-      {/* Modal */}
-      <div className="flex min-h-full items-center justify-center p-4">
-        <div className="relative bg-white rounded-xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      {/* Centering container constrained below header */}
+      <div
+        className="fixed left-0 right-0 flex items-start justify-center px-4 py-6"
+        style={{ top: headerOffset, bottom: 16 }}
+      >
+        <div
+          className="bg-white rounded-xl shadow-xl border border-gray-200 w-full overflow-y-auto"
+          style={{
+            width: "min(720px,96%)",
+            maxHeight: `calc(100vh - ${headerOffset + 96}px)`,
+          }}
+        >
           {/* Header */}
           <div className="bg-blue-600 px-6 py-4 rounded-t-xl">
             <div className="flex items-center justify-between">
@@ -173,21 +195,9 @@ const TestDetailsModal = ({ test, isOpen, onClose }) => {
               </h2>
               <button
                 onClick={onClose}
-                className="text-white hover:text-gray-200 transition-colors duration-200"
+                className="text-white text-sm font-medium hover:text-gray-200 transition-colors duration-200"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                Back to tests
               </button>
             </div>
           </div>
@@ -217,39 +227,12 @@ const TestDetailsModal = ({ test, isOpen, onClose }) => {
               ))}
             </div>
 
-            {/* Action Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                Book Test
-              </button>
-              <button className="flex-1 bg-white text-gray-700 py-3 px-6 rounded-lg font-medium border border-gray-300 hover:border-blue-300 hover:text-blue-600 transition-colors duration-200 flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
-                  />
-                </svg>
-                Share Test
+            <div className="mt-8">
+              <button
+                onClick={onClose}
+                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
+              >
+                Back to tests
               </button>
             </div>
           </div>
