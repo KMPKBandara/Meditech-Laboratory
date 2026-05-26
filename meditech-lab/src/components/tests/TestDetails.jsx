@@ -168,7 +168,7 @@ const TestDetailsModal = ({ test, isOpen, onClose }) => {
         style={{ top: headerOffset, bottom: 16 }}
       >
         <div
-          className="bg-white rounded-xl shadow-xl border border-gray-200 w-full overflow-y-auto"
+          className="bg-white rounded-xl shadow-xl border border-gray-200 w-full overflow-hidden flex flex-col"
           style={{
             width: "min(720px,96%)",
             maxHeight: `calc(100vh - ${headerOffset + 96}px)`,
@@ -202,8 +202,11 @@ const TestDetailsModal = ({ test, isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Content */}
-          <div className="p-6">
+          {/* Scrollable Content */}
+          <div
+            className="p-6 overflow-y-auto flex-1 scrollbar-hide"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
             <div className="space-y-4">
               {detailItems.map((item, index) => (
                 <div
@@ -226,15 +229,15 @@ const TestDetailsModal = ({ test, isOpen, onClose }) => {
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="mt-8">
-              <button
-                onClick={onClose}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
-              >
-                Back to tests
-              </button>
-            </div>
+          <div className="px-6 pb-6 pt-4">
+            <button
+              onClick={onClose}
+              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
+            >
+              Back to tests
+            </button>
           </div>
         </div>
       </div>

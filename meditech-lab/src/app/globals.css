@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import 'swiper/css';
-@import 'swiper/css/pagination';
+@import "swiper/css";
+@import "swiper/css/pagination";
 
 /* Custom Styles */
 .pdf-container {
@@ -41,4 +41,13 @@
     size: A4;
     margin: 1cm;
   }
+}
+
+/* Hide scrollbars while preserving scrolling */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -225,7 +225,7 @@ const Tests = () => {
                     </button>
                   </div>
                 </div>
-                <div className="p-4 space-y-4 max-h-80 overflow-y-auto">
+                <div className="p-4 space-y-4 max-h-80 overflow-y-auto scrollbar-hide">
                   {/* Fasting Filter */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -308,7 +308,7 @@ const Tests = () => {
                     Categories
                   </h2>
                 </div>
-                <div className="p-4 max-h-96 overflow-y-auto">
+                <div className="p-4 max-h-96 overflow-y-auto scrollbar-hide">
                   <TestCategorySelector
                     categories={testCategories}
                     selected={selectedCategory}
@@ -352,7 +352,7 @@ const Tests = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 max-h-[calc(125vh-14rem)] overflow-y-auto scrollbar-hide">
                   <TestList
                     tests={filteredTests}
                     onSelect={handleTestSelect}

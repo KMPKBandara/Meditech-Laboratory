@@ -4,14 +4,13 @@ import React, { useEffect, useRef } from "react";
 import LabTec from "../../assets/images/home/Lab.jpg";
 import { useTranslation } from "react-i18next";
 
-const ChooseUs = () => {
+const ChooseUs = ({ imageWidth = 350, imageHeight = 200 }) => {
   // Refs for animation elements
   const benefitRefs = useRef([]);
   const imageRef = useRef(null);
   const titleRef = useRef(null);
   const { t } = useTranslation();
   const benefits = t("home.chooseUs.benefits", { returnObjects: true });
-
 
   useEffect(() => {
     // Setup Intersection Observer for animations
@@ -59,8 +58,8 @@ const ChooseUs = () => {
   }, []);
 
   return (
-    <section className="py-12 px-4 bg-gradient-to-b from-white to-blue-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-12 px-4 bg-gradient-to-b from-white to-blue-50 flex items-center justify-center">
+      <div className="max-w-7xl mx-auto w-full">
         <style jsx global>{`
           /* Base styles for elements before animation */
           .fade-up {
@@ -102,21 +101,21 @@ const ChooseUs = () => {
           {t("home.chooseUs.title")}
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           {/* Content Section - Will be on the left on desktop, top on mobile */}
           <div className="space-y-4">
-  {benefits.map((item, index) => (
-    <div key={index}>
-      <p className="text-gray-700 flex items-start">
-        <span className="text-blue-600 font-bold mr-2">✓</span>
-        {item}
-      </p>
-    </div>
-  ))}
-</div>
+            {benefits.map((item, index) => (
+              <div key={index}>
+                <p className="text-gray-700 flex items-start">
+                  <span className="text-blue-600 font-bold mr-2">✓</span>
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
 
           {/* Image Section - Will be on the right on desktop, bottom on mobile */}
-          <div className="w-full md:w-1/2 mt-6 md:mt-0">
+          <div className="mt-6 md:mt-0">
             <div
               ref={imageRef}
               className="relative rounded-xl overflow-hidden shadow-xl fade-up delay-300"
@@ -124,9 +123,9 @@ const ChooseUs = () => {
               <Image
                 src={LabTec}
                 alt="Medical Laboratory Professional"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
+                width={imageWidth}
+                height={imageHeight}
+                className="object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/70 to-transparent p-4">
                 <p className="text-white font-medium text-lg">

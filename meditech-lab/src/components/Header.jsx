@@ -74,15 +74,16 @@ const Header = () => {
           ))}
         </nav>
 
-        
         <div className="hidden md:flex items-center space-x-3 relative">
-          {/* Language Toggle Button */}
-          <button
-            onClick={() => changeLanguage(currentLang === "en" ? "si" : "en")}
-            className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-2 rounded-full text-sm font-medium transition-colors duration-300"
-          >
-             {currentLang === "en" ? "සිංහල" : "English"}
-          </button>
+          {/* Language Toggle Button - show only on home page */}
+          {pathname === "/" && (
+            <button
+              onClick={() => changeLanguage(currentLang === "en" ? "si" : "en")}
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-2 rounded-full text-sm font-medium transition-colors duration-300"
+            >
+              {currentLang === "en" ? "සිංහල" : "English"}
+            </button>
+          )}
 
           {/* Contact Button */}
           <Link
@@ -129,12 +130,16 @@ const Header = () => {
           </nav>
 
           <div className="flex flex-col items-center space-y-4 mt-8">
-            <button
-              onClick={() => changeLanguage(currentLang === "en" ? "si" : "en")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-colors"
-            >
-              {currentLang === "en" ? "සිංහල" : "English"}
-            </button>
+            {pathname === "/" && (
+              <button
+                onClick={() =>
+                  changeLanguage(currentLang === "en" ? "si" : "en")
+                }
+                className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+              >
+                {currentLang === "en" ? "සිංහල" : "English"}
+              </button>
+            )}
             <Link
               href="/contact"
               onClick={closeMobile}
