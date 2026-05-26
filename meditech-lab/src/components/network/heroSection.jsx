@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { MapPin, Building2 } from "lucide-react";
-import BalangodaImg from "../../../src/assets/images/branch/Balangoda_Branch.jpg";
+import BalangodaImg from "../../../src/assets/images/branch/main_branch.jpeg";
 
 
 const HeroSection = () => (
   <div className="text-center mt-16 mb-16 shadow-lg rounded-[20px] py-32 px-6 bg-cover bg-center bg-no-repeat relative overflow-hidden">
-    <Image
+    {/* <Image
       src={BalangodaImg}
       alt="Branch Background"
       fill
       priority
-      className="object-cover opacity-45"
-    />
+      className="object-cover opacity-80"
+    /> */}
 
     {/* Overlay for better text readability */}
     <div className="absolute inset-0 bg-white/20 rounded-[20px]"></div>

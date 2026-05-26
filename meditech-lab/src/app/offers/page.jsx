@@ -138,7 +138,7 @@ export default function OffersPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
       {/* Header */}
-      <section className="py-16 px-4">
+      <section className="py-30 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
             Special Offers & Health Packages
