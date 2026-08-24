@@ -3,10 +3,10 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import scientist from "../../assets/images/home/scientist.jpg";
-import RoutineTesting from "../../assets/images/home/Routine-Testing.jpg";
-import HomeSample from "../../assets/images/home/Home-Sample-Collection.jpg";
-import HealthPackages from "../../assets/images/home/Health-Packages.jpg";
-import GeneticTesting from "../../assets/images/home/Genetic-Testing.jpg";
+import RoutineTesting from "../../assets/images/home/Automated-Analyzers.jpg";
+import HomeSample from "../../assets/images/home/Sample-Handling.jpg";
+import HealthPackages from "../../assets/images/home/Lab-Technician.png";
+import GeneticTesting from "../../assets/images/home/Genetic-Testing.png";
 import { useTranslation } from "react-i18next";
 
 // Import Swiper components and styles
