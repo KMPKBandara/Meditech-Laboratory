@@ -6,6 +6,23 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+export function generateMetadata({ params }) {
+  const branch = branches[parseInt(params.id)];
+
+  if (!branch) {
+    return {
+      title: "Branch Not Found",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const branchName = branch.name.replace(" (Main Branch)", "");
+  return {
+    title: `${branchName} | Branch and Collection Centers`,
+    description: `Find ${branchName} address, opening hours, diagnostic services, and nearby collection centers from Meditech Laboratory.`,
+    alternates: { canonical: `/network/${params.id}` },
+  };
+}
 export default function BranchPage({ params }) {
   const { id } = params;
   const branchIndex = parseInt(id);

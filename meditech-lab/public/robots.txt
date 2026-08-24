@@ -1,0 +1,8 @@
+# robots.txt for meditechlab.lk
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+
+Sitemap: https://meditechlab.lk/sitemap.xml
