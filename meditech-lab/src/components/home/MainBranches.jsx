@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Balangoda from "../../assets/images/home/Balangoda.jpg";
 import Rathnapura from "../../assets/images/home/Rathnapura.jpeg";
-import Welimada from "../../assets/images/home/Welimada.jpg";
+import Welimada from "../../assets/images/home/Welimada.png";
 import Kalawana from "../../assets/images/home/Kalawana.jpg";
 import { useTranslation } from "react-i18next";
 

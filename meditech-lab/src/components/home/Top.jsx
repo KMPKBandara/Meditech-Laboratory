@@ -11,10 +11,10 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
-import Lab1 from "../../assets/images/home/Lab1.jpg";
-import Lab2 from "../../assets/images/home/Lab2.jpg";
-import Lab3 from "../../assets/images/home/Lab3.jpg";
-import Lab4 from "../../assets/images/home/Lab4.png";
+import Lab1 from "../../../src/assets/images/home/Lab1.png";
+import Lab2 from "../../../src/assets/images/home/Lab2.png";
+import Lab3 from "../../../src/assets/images/home/Lab3.png";
+import Lab4 from "../../../src/assets/images/home/Lab4.png";
 import { useTranslation } from "react-i18next";
 
 const images = [Lab1, Lab2, Lab3, Lab4];

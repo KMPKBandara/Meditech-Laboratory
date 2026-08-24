@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import LabTec from "../../assets/images/home/Lab.jpg";
+import LabTec from "../../assets/images/home/Lab.png";
 import { useTranslation } from "react-i18next";
 
 const ChooseUs = ({ imageWidth = 350, imageHeight = 200 }) => {
