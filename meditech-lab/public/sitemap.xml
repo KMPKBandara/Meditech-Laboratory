@@ -46,39 +46,31 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- City / Branch pages (target keywords included in URLs for relevance) -->
+  <!-- Branch pages use numeric IDs because that is the live route format. -->
   <url>
-    <loc>https://meditechlab.lk/network/balangoda</loc>
+    <loc>https://meditechlab.lk/network/0</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://meditechlab.lk/network/rathnapura</loc>
+    <loc>https://meditechlab.lk/network/1</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://meditechlab.lk/network/welimada</loc>
+    <loc>https://meditechlab.lk/network/2</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://meditechlab.lk/network/kalawana</loc>
+    <loc>https://meditechlab.lk/network/3</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- Helpful pages / actions -->
-  <url>
-    <loc>https://meditechlab.lk/download-report</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-  </url>
-
-  <!-- Example dynamic report and admin endpoints are intentionally omitted from sitemap for security/privacy */ -->
+  <!-- Private report, auth, admin, and API routes are intentionally omitted. -->
 </urlset>

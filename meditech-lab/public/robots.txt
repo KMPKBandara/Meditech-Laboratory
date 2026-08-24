@@ -1,10 +1,8 @@
 # robots.txt for meditechlab.lk
 User-agent: *
 Allow: /
-Crawl-delay: 5
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
 
 Sitemap: https://meditechlab.lk/sitemap.xml
-
-# If there are staging or admin paths you don't want indexed, add them here, for example:
-# Disallow: /admin/
-# Disallow: /api/

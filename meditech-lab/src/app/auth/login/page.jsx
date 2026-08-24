@@ -1,3 +1,6 @@
+import { redirect } from "next/navigation";
+
+/*
 // src/app/auth/login.jsx
 "use client"; // This is a client component
 
@@ -79,4 +82,9 @@ export default function LoginPage() {
             </div>
         </div>
     );
+}
+*/
+
+export default function LoginPage() {
+  redirect("/");
 }

@@ -34,7 +34,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/share/19uAnmVHso/"
+                href="https://www.facebook.com/share/1DeTuMUcwF/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300"
@@ -223,7 +223,7 @@ const Footer = () => {
       </div>
 
       {/* Certifications and Accreditations */}
-      <div className="container mx-auto px-4 py-6 border-t border-gray-800">
+      {/* <div className="container mx-auto px-4 py-6 border-t border-gray-800">
         <div className="text-center">
           <h3 className="text-lg font-semibold text-white mb-4">
             Accreditations & Certifications
@@ -249,15 +249,27 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex justify-center items-center text-center">
-            <div className="text-sm text-gray-500 mb-4 md:mb-0">
+          <div className="flex flex-col items-center justify-between gap-2 text-center md:flex-row">
+            <p className="text-sm text-gray-500">
               © {currentYear} Meditech Laboratory. All rights reserved.
-            </div>
+            </p>
+
+            <p className="text-sm text-gray-500">
+              Designed &amp; Developed by{" "}
+              <a
+                href="https://www.linkedin.com/company/zriolabs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-blue-400 transition-colors hover:text-blue-300"
+              >
+                Zrio Labs
+              </a>
+            </p>
           </div>
         </div>
       </div>

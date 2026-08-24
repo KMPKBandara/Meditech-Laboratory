@@ -7,6 +7,7 @@ import { redirect } from "next/navigation"; // NEW: Import redirect for server-s
 export const metadata = {
   title: "Admin Dashboard",
   description: "Admin panel for managing the medical laboratory",
+  robots: { index: false, follow: false },
 };
 
 export default async function AdminLayout({ children }) {
