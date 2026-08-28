@@ -10,7 +10,7 @@ const MainMapSection = () => (
       </p>
     </div>
     <div className="flex justify-center">
-   <iframe src="https://www.google.com/maps/d/embed?mid=1YRgxF3JvD31eqIxghrhDQFybpNkA27k&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+   <iframe src="https://www.google.com/maps/d/embed?mid=1dcbgW6B9eL-AigeIjpWYjMWu5ghDBU4&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
     </div>
   </div>
 );

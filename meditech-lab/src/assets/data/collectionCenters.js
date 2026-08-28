@@ -36,7 +36,7 @@ const branches = [
         name: " Balangoda Privet Hospital ",
         address: " No:10, Karawketiya Road, Balangoda",
         phone: "071-4453493",
-        hours: "7 AM - 7 PM / 6.30 PM - 4 P - (Poya day)",
+        hours: "7 AM - 7 PM / 6.30 AM - 4 PM - (Poya day)",
       },
       {
         id: 4,

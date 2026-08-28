@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Lab from "../../assets/images/home/LabTec.jpeg";
+import Lab from "../../assets/images/home/LabTec.png";
 import MainBranches from "./MainBranches";
 import { useTranslation } from "react-i18next";
 
@@ -19,7 +19,7 @@ const LabNetwork = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const animatedElements = document.querySelectorAll(".animate-on-scroll");
@@ -68,7 +68,9 @@ const LabNetwork = () => {
         .animate-on-scroll {
           opacity: 0;
           transform: translateY(30px);
-          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+          transition:
+            opacity 0.6s ease-out,
+            transform 0.6s ease-out;
         }
 
         .animate-in {
@@ -214,7 +216,9 @@ const LabNetwork = () => {
                 </div>
                 <div>
                   <p className="text-4xl font-bold text-blue-700">04</p>
-                  <p className="font-medium text-gray-700">{t("home.network.statistics.mainBranches.title")}</p>
+                  <p className="font-medium text-gray-700">
+                    {t("home.network.statistics.mainBranches.title")}
+                  </p>
                 </div>
               </div>
               <p className="text-sm text-gray-600">

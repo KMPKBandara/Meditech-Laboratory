@@ -19,17 +19,7 @@ const MapAndCentersGrid = ({ branch }) => (
       </h3>
 
       <div className="rounded-lg sm:rounded-2xl overflow-hidden shadow-md sm:shadow-xl ring-1 ring-black/5">
-        <iframe
-          width="100%"
-          height="250"
-          className="sm:h-[320px] lg:h-[450px]"
-          loading="lazy"
-          style={{ border: 0 }}
-          allowFullScreen
-          src={`https://maps.google.com/maps?width=100%&height=450&hl=en&q=${encodeURIComponent(
-            branch.mapQuery
-          )}&t=&z=14&ie=UTF8&iwloc=B&output=embed`}
-        ></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1YRgxF3JvD31eqIxghrhDQFybpNkA27k&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
       </div>
     </div>
 
