@@ -19,28 +19,24 @@ const ContactPage = () => {
       name: "Balangoda Branch",
       address: "No:08, Kalthota Road, Balagahamula, Balangoda",
       phone: "+94 45 2288388",
-      email: "balangoda@meditechlab.com",
       hours: "Mon - Sat: 7:00 AM - 7:00 PM",
     },
     {
       name: "Rathnapura Branch",
       address: "No:344, Hospital Junction, Colombo Road, Rathnapura",
       phone: "+94 45 222 6446",
-      email: "rathnapura@meditechlab.com",
       hours: "Mon - Sat: 6:30 AM - 8:00 PM",
     },
     {
       name: "Welimada Branch",
       address: "No:789 Hill Street, Welimada",
       phone: "+94 52 2245566",
-      email: "welimada@meditechlab.com",
       hours: "Mon - Fri: 7:30 AM - 6:30 PM",
     },
     {
       name: "Kalawana Branch",
       address: "Hospital Road, Kalawana",
       phone: "+94 45 2255370",
-      email: "kalawana@meditechlab.com",
       hours: "Mon - Sat: 7:00 AM - 7:30 PM",
     },
   ];
@@ -69,7 +65,7 @@ const ContactPage = () => {
         "service_u89so1g",
         "template_eanxzy1",
         templateParams,
-        "icEWsWHncreoq91Fd"
+        "icEWsWHncreoq91Fd",
       );
 
       console.log("SUCCESS!", response.status, response.text);
@@ -141,7 +137,7 @@ const ContactPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+          <div className="h-fit bg-white rounded-2xl shadow-lg p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               Contact Us
             </h2>
@@ -397,20 +393,6 @@ const ContactPage = () => {
                   prior appointment
                 </p>
               </div>
-            </div>
-
-            {/* Emergency Contact */}
-            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl shadow-lg p-6 border border-red-200">
-              <h3 className="text-xl font-bold text-red-800 mb-3">
-                🚨 Emergency Contact
-              </h3>
-              <p className="text-red-700 mb-2">
-                For urgent medical test requirements:
-              </p>
-              <p className="text-lg font-bold text-red-800">+94 11 999 8888</p>
-              <p className="text-sm text-red-600">
-                Available 24/7 for emergency services
-              </p>
             </div>
           </div>
         </div>

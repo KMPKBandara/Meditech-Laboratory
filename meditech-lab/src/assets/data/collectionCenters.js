@@ -208,7 +208,7 @@ const branches = [
       {
         id: 12,
         name: "Ganegama Collection Center",
-        address: "Ganegama Junction, Ganegama, pelmadulla.",
+        address: "In front of Ganegama Temple, Ganegama, Pelmadulla.",
         phone: "077 177 5132 / 071 174 1770",
         hours: "7 AM - 10 AM (poya day closed.)",
       },
@@ -240,7 +240,7 @@ const branches = [
         address: "Lellopitiya junction, lellopitiya, Rathnapura.",
         phone: "077-8833725 / 071-1556446",
         hours: "6.45 AM - 11 AM (Poya day closed)",
-      }
+      },
     ],
     mapQuery:
       "No.%20234%20Main%20Street,%20Rathnapura,%20Sri%20Lanka+(Meditech%20Laboratory%20Rathnapura)",
