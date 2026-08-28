@@ -123,12 +123,6 @@ const ContactPage = () => {
                     <span className="text-blue-600 mr-2">📞</span>
                     <span className="text-gray-700">{branch.phone}</span>
                   </div>
-                  <div className="flex items-center">
-                    <span className="text-blue-600 mr-2">✉️</span>
-                    <span className="text-gray-700 break-all">
-                      {branch.email}
-                    </span>
-                  </div>
                 </div>
               </div>
             ))}
